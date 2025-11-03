@@ -3,54 +3,83 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🔥 PREMIUM Telegram Магазин | LZT.market</title>
+    <title>⚡ ELITE Telegram Shop | Черный рынок премиум аккаунтов</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-
+        
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            font-family: 'Arial', sans-serif;
+            background: #000000;
+            color: #ffffff;
             min-height: 100vh;
-            padding: 20px;
-            color: #333;
+            padding: 0;
+        }
+
+        /* Анимированный фон */
+        .bg-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(255, 0, 0, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(139, 0, 0, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(178, 34, 34, 0.05) 0%, transparent 50%);
+            z-index: -1;
         }
 
         .container {
             max-width: 1400px;
             margin: 0 auto;
+            padding: 20px;
         }
-
-        /* Хедер */
+        
+        /* Хедер в стиле киберпанк */
         .header {
             text-align: center;
-            color: white;
             margin-bottom: 40px;
             padding: 50px 20px;
-            background: rgba(255,255,255,0.1);
-            border-radius: 20px;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255,255,255,0.2);
+            background: linear-gradient(135deg, rgba(0,0,0,0.9) 0%, rgba(139,0,0,0.7) 100%);
+            border-radius: 15px;
+            border: 1px solid #8b0000;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,0,0,0.1), transparent);
+            animation: shine 3s infinite;
         }
 
         .header h1 {
-            font-size: 3.5em;
+            font-size: 4em;
             margin-bottom: 15px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-            background: linear-gradient(45deg, #fff, #f0f0f0);
+            background: linear-gradient(45deg, #ff0000, #8b0000, #ff4500);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 30px rgba(255,0,0,0.5);
+            font-weight: bold;
+            letter-spacing: 2px;
         }
-
+        
         .header p {
             font-size: 1.3em;
-            opacity: 0.9;
+            color: #ccc;
             margin-bottom: 10px;
+            text-shadow: 0 0 10px rgba(255,0,0,0.3);
         }
-
+        
         .stats {
             display: flex;
             justify-content: center;
@@ -58,86 +87,94 @@
             margin-top: 20px;
             flex-wrap: wrap;
         }
-
+        
         .stat-item {
-            background: rgba(255,255,255,0.2);
-            padding: 10px 20px;
-            border-radius: 15px;
-            backdrop-filter: blur(10px);
+            background: rgba(139, 0, 0, 0.3);
+            padding: 12px 24px;
+            border-radius: 25px;
+            border: 1px solid #8b0000;
             font-weight: 500;
+            color: #ffcccb;
+            box-shadow: 0 0 15px rgba(255,0,0,0.2);
         }
-
-        /* Фильтры */
+        
+        /* Фильтры в стиле неон */
         .filters {
-            background: white;
+            background: rgba(0, 0, 0, 0.8);
             padding: 25px;
-            border-radius: 20px;
+            border-radius: 15px;
             margin-bottom: 30px;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            border: 1px solid #8b0000;
             display: flex;
             gap: 15px;
             flex-wrap: wrap;
             align-items: center;
+            box-shadow: 0 0 30px rgba(255,0,0,0.1);
         }
-
+        
         .filter-btn {
-            background: #ecf0f1;
-            border: none;
+            background: rgba(139, 0, 0, 0.3);
+            border: 1px solid #8b0000;
             padding: 12px 24px;
             border-radius: 25px;
             cursor: pointer;
             transition: all 0.3s ease;
             font-weight: 500;
             font-size: 0.95em;
+            color: #ffcccb;
         }
-
+        
         .filter-btn.active {
-            background: linear-gradient(45deg, #0088cc, #00a8ff);
-            color: white;
-            box-shadow: 0 4px 15px rgba(0,136,204,0.3);
+            background: linear-gradient(45deg, #ff0000, #8b0000);
+            color: #000;
+            box-shadow: 0 0 20px rgba(255,0,0,0.5);
+            border: 1px solid #ff0000;
         }
-
+        
         .filter-btn:hover {
-            background: #d5dbdb;
+            background: rgba(255, 0, 0, 0.5);
             transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255,0,0,0.3);
         }
-
+        
         .refresh-btn {
-            background: linear-gradient(45deg, #27ae60, #2ecc71);
-            color: white;
+            background: linear-gradient(45deg, #8b0000, #ff0000);
+            color: #000;
             border: none;
             padding: 14px 28px;
             border-radius: 25px;
             cursor: pointer;
-            font-weight: 600;
+            font-weight: bold;
             margin-left: auto;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(39,174,96,0.3);
+            box-shadow: 0 0 20px rgba(255,0,0,0.3);
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
-
+        
         .refresh-btn:hover {
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(39,174,96,0.4);
+            box-shadow: 0 0 30px rgba(255,0,0,0.6);
         }
-
-        /* Сетка товаров */
+        
+        /* Сетка товаров - стиль dark elite */
         .products-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
             gap: 25px;
             margin-bottom: 50px;
         }
-
+        
         .product-card {
-            background: white;
-            border-radius: 20px;
+            background: linear-gradient(135deg, rgba(0,0,0,0.9) 0%, rgba(139,0,0,0.2) 100%);
+            border-radius: 15px;
             padding: 25px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
             transition: all 0.3s ease;
-            border: 1px solid rgba(255,255,255,0.3);
+            border: 1px solid #8b0000;
             position: relative;
             overflow: hidden;
             animation: fadeIn 0.6s ease;
+            box-shadow: 0 0 20px rgba(139,0,0,0.1);
         }
 
         .product-card::before {
@@ -146,72 +183,88 @@
             top: 0;
             left: 0;
             right: 0;
-            height: 4px;
-            background: linear-gradient(45deg, #0088cc, #00c6ff);
+            height: 3px;
+            background: linear-gradient(45deg, #ff0000, #8b0000, #ff4500);
         }
 
+        .product-card::after {
+            content: 'ELITE';
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(255,0,0,0.2);
+            color: #ffcccb;
+            padding: 2px 8px;
+            border-radius: 10px;
+            font-size: 0.7em;
+            font-weight: bold;
+        }
+        
         .product-card:hover {
             transform: translateY(-8px);
-            box-shadow: 0 20px 45px rgba(0,0,0,0.15);
+            box-shadow: 0 10px 30px rgba(255,0,0,0.3);
+            border: 1px solid #ff0000;
         }
-
+        
         .product-icon {
             font-size: 3.5em;
             margin-bottom: 15px;
             text-align: center;
+            filter: drop-shadow(0 0 10px rgba(255,0,0,0.5));
         }
-
+        
         .product-card h3 {
-            color: #2c3e50;
+            color: #ffcccb;
             margin-bottom: 12px;
             font-size: 1.4em;
             font-weight: 600;
             line-height: 1.3;
         }
-
+        
         .product-card p {
-            color: #7f8c8d;
+            color: #aaa;
             margin-bottom: 15px;
             line-height: 1.5;
             font-size: 0.95em;
             min-height: 45px;
         }
-
+        
         .product-meta {
             display: flex;
             justify-content: space-between;
             margin: 15px 0;
             font-size: 0.9em;
         }
-
+        
         .seller {
-            color: #0088cc;
+            color: #ff6666;
             font-weight: 500;
         }
-
+        
         .rating {
-            color: #f39c12;
+            color: #ffcc00;
             font-weight: 500;
         }
-
+        
         .price-section {
             margin: 20px 0;
             text-align: center;
         }
-
+        
         .price {
             font-size: 2.2em;
-            color: #27ae60;
+            color: #ff4444;
             font-weight: bold;
+            text-shadow: 0 0 10px rgba(255,0,0,0.3);
         }
-
+        
         .original-price {
             text-decoration: line-through;
-            color: #95a5a6;
+            color: #666;
             font-size: 1.1em;
             margin-top: 5px;
         }
-
+        
         .stock-status {
             padding: 10px 15px;
             border-radius: 20px;
@@ -221,19 +274,19 @@
             font-size: 0.9em;
             border: 2px solid transparent;
         }
-
+        
         .in-stock {
-            background: #d4edda;
-            color: #155724;
-            border-color: #c3e6cb;
+            background: rgba(0, 100, 0, 0.3);
+            color: #90ee90;
+            border-color: #006400;
         }
-
+        
         .out-of-stock {
-            background: #f8d7da;
-            color: #721c24;
-            border-color: #f5c6cb;
+            background: rgba(139, 0, 0, 0.3);
+            color: #ffcccb;
+            border-color: #8b0000;
         }
-
+        
         .product-source {
             display: flex;
             justify-content: space-between;
@@ -241,98 +294,102 @@
             margin: 15px 0;
             font-size: 0.8em;
         }
-
+        
         .lzt-badge {
-            background: linear-gradient(45deg, #ff6b00, #ff8c00);
-            color: white;
+            background: linear-gradient(45deg, #8b0000, #ff0000);
+            color: #000;
             padding: 5px 12px;
             border-radius: 15px;
-            font-weight: 500;
+            font-weight: bold;
             font-size: 0.85em;
         }
-
+        
         .update-time {
-            color: #7f8c8d;
+            color: #888;
             font-size: 0.85em;
         }
-
+        
         .btn {
-            background: linear-gradient(45deg, #0088cc, #00a8ff);
-            color: white;
+            background: linear-gradient(45deg, #8b0000, #ff0000);
+            color: #000;
             border: none;
             padding: 16px;
-            border-radius: 12px;
+            border-radius: 10px;
             font-size: 1.1em;
             cursor: pointer;
             width: 100%;
             transition: all 0.3s ease;
-            font-weight: 600;
+            font-weight: bold;
             margin: 10px 0;
-            box-shadow: 0 4px 15px rgba(0,136,204,0.2);
+            box-shadow: 0 0 15px rgba(255,0,0,0.3);
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
-
+        
         .btn:hover {
-            background: linear-gradient(45deg, #006699, #0088cc);
+            background: linear-gradient(45deg, #ff0000, #8b0000);
             transform: scale(1.02);
-            box-shadow: 0 6px 20px rgba(0,136,204,0.3);
+            box-shadow: 0 0 25px rgba(255,0,0,0.6);
         }
-
+        
         .btn.disabled {
-            background: #bdc3c7;
+            background: #333;
+            color: #666;
             cursor: not-allowed;
             transform: none;
             box-shadow: none;
         }
-
+        
         .btn.disabled:hover {
             transform: none;
             box-shadow: none;
         }
-
+        
         .lzt-link {
             display: block;
             text-align: center;
             margin-top: 12px;
-            color: #0088cc;
+            color: #ff6666;
             text-decoration: none;
             font-size: 0.9em;
             transition: color 0.3s ease;
             font-weight: 500;
         }
-
+        
         .lzt-link:hover {
-            color: #006699;
+            color: #ff0000;
             text-decoration: underline;
         }
-
-        /* Корзина */
+        
+        /* Корзина - неон красный */
         .cart-notification {
             position: fixed;
             top: 20px;
             right: 20px;
-            background: linear-gradient(45deg, #e74c3c, #c0392b);
-            color: white;
+            background: linear-gradient(45deg, #8b0000, #ff0000);
+            color: #000;
             padding: 16px 28px;
             border-radius: 25px;
             font-weight: bold;
-            box-shadow: 0 8px 25px rgba(231,76,60,0.3);
+            box-shadow: 0 0 30px rgba(255,0,0,0.5);
             z-index: 1000;
             display: none;
             animation: bounce 0.5s ease;
             font-size: 1.1em;
+            border: 2px solid #ff0000;
         }
-
+        
         /* Футер */
         .footer {
             text-align: center;
-            color: white;
+            color: #ccc;
             margin-top: 50px;
             padding: 30px;
-            background: rgba(255,255,255,0.1);
-            border-radius: 20px;
-            backdrop-filter: blur(10px);
+            background: rgba(0, 0, 0, 0.8);
+            border-radius: 15px;
+            border: 1px solid #8b0000;
         }
-
+        
         .footer-links {
             display: flex;
             justify-content: center;
@@ -340,39 +397,51 @@
             margin-top: 20px;
             flex-wrap: wrap;
         }
-
+        
         .footer-link {
-            color: white;
+            color: #ff6666;
             text-decoration: none;
             padding: 8px 16px;
             border-radius: 15px;
-            background: rgba(255,255,255,0.2);
+            background: rgba(139, 0, 0, 0.3);
             transition: all 0.3s ease;
+            border: 1px solid #8b0000;
         }
-
+        
         .footer-link:hover {
-            background: rgba(255,255,255,0.3);
+            background: rgba(255, 0, 0, 0.3);
             transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255,0,0,0.2);
         }
-
+        
         /* Анимации */
         @keyframes bounce {
             0%, 20%, 60%, 100% {transform: translateY(0);}
             40% {transform: translateY(-8px);}
             80% {transform: translateY(-4px);}
         }
-
+        
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
+        @keyframes shine {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+        
         @keyframes pulse {
             0% { transform: scale(1); }
             50% { transform: scale(1.05); }
             100% { transform: scale(1); }
         }
 
+        @keyframes glow {
+            0%, 100% { box-shadow: 0 0 20px rgba(255,0,0,0.3); }
+            50% { box-shadow: 0 0 30px rgba(255,0,0,0.6); }
+        }
+        
         /* Адаптивность */
         @media (max-width: 768px) {
             .header h1 { font-size: 2.5em; }
@@ -384,56 +453,69 @@
             .filter-btn { width: 100%; text-align: center; }
             .footer-links { flex-direction: column; gap: 10px; }
         }
-
+        
         /* Загрузка */
         .loading {
             text-align: center;
-            color: white;
+            color: #ffcccb;
             font-size: 1.2em;
             padding: 40px;
         }
-
+        
         .loading-spinner {
-            border: 4px solid rgba(255,255,255,0.3);
+            border: 4px solid rgba(139, 0, 0, 0.3);
             border-radius: 50%;
-            border-top: 4px solid white;
+            border-top: 4px solid #ff0000;
             width: 40px;
             height: 40px;
             animation: spin 1s linear infinite;
             margin: 0 auto 20px;
         }
-
+        
         @keyframes spin {
             0% { transform: rotate(0deg); }
             100% { transform: rotate(360deg); }
         }
+
+        /* Дополнительные стили для элитного вида */
+        .glow-text {
+            text-shadow: 0 0 10px rgba(255,0,0,0.5);
+        }
+
+        .neon-border {
+            border: 1px solid #ff0000;
+            box-shadow: 0 0 10px rgba(255,0,0,0.5);
+        }
     </style>
 </head>
 <body>
+    <!-- Анимированный фон -->
+    <div class="bg-animation"></div>
+
     <div class="container">
         <!-- Хедер -->
         <div class="header">
-            <h1>🔥 PREMIUM Telegram Магазин</h1>
-            <p>Топовые аккаунты с LZT.market • Гарантия качества • Быстрая доставка</p>
-
+            <h1>⚡ ELITE TELEGRAM SHOP</h1>
+            <p>Черный рынок премиум аккаунтов • Только эксклюзив • Анонимно</p>
+            
             <div class="stats">
                 <div class="stat-item">🕒 <span id="currentTime">--:--:--</span></div>
                 <div class="stat-item">📦 Товаров: <span id="productCount">0</span></div>
                 <div class="stat-item">🛒 В корзине: <span id="cartCount">0</span></div>
-                <div class="stat-item">⭐ Рейтинг: 4.8/5</div>
+                <div class="stat-item">⭐ Рейтинг: 4.9/5</div>
             </div>
         </div>
 
         <!-- Фильтры -->
         <div class="filters">
-            <button class="filter-btn active" onclick="setFilter('all')">📦 Все товары</button>
-            <button class="filter-btn" onclick="setFilter('in-stock')">✅ В наличии</button>
-            <button class="filter-btn" onclick="setFilter('premium')">💎 Премиум</button>
-            <button class="filter-btn" onclick="setFilter('vintage')">🕒 Винтаж</button>
-            <button class="filter-btn" onclick="setFilter('business')">👑 Бизнес</button>
+            <button class="filter-btn active" onclick="setFilter('all')">🎲 Все товары</button>
+            <button class="filter-btn" onclick="setFilter('in-stock')">💀 В наличии</button>
+            <button class="filter-btn" onclick="setFilter('premium')">👑 Премиум</button>
+            <button class="filter-btn" onclick="setFilter('vintage')">⚰️ Винтаж</button>
+            <button class="filter-btn" onclick="setFilter('business')">💼 Бизнес</button>
             <button class="filter-btn" onclick="setFilter('hot')">🔥 Горячие</button>
             <button class="refresh-btn" onclick="loadLZTProducts()">
-                🔄 Обновить товары
+                🔄 Обновить базу
             </button>
         </div>
 
@@ -441,19 +523,19 @@
         <div class="products-grid" id="productsGrid">
             <div class="loading">
                 <div class="loading-spinner"></div>
-                <p>Загрузка товаров с LZT.market...</p>
+                <p>Загрузка элитных товаров...</p>
             </div>
         </div>
 
         <!-- Футер -->
         <div class="footer">
-            <p>© 2024 PREMIUM Telegram Shop. Все права защищены.</p>
-            <p>Товары загружаются с LZT.market в реальном времени</p>
-
+            <p>© 2024 ELITE TELEGRAM SHOP. Анонимный черный рынок.</p>
+            <p>Все операции защищены • Без логирования • Только крипта</p>
+            
             <div class="footer-links">
-                <a href="#" class="footer-link">📞 Техподдержка</a>
-                <a href="#" class="footer-link">📋 Условия использования</a>
-                <a href="#" class="footer-link">🛡️ Гарантии</a>
+                <a href="#" class="footer-link">📞 Поддержка (Tor)</a>
+                <a href="#" class="footer-link">🔒 Безопасность</a>
+                <a href="#" class="footer-link">💎 Гарантии</a>
                 <a href="https://lzt.market" target="_blank" class="footer-link">🌐 LZT.market</a>
             </div>
         </div>
@@ -464,157 +546,118 @@
         🛒 В корзине: <span id="cartCountDisplay">0</span> товаров
     </div>
 
+    <!-- JavaScript код остается таким же как в предыдущей версии -->
     <script>
+        // Тот же JavaScript код что и раньше
         let cartItems = [];
         let allProducts = [];
         let currentFilter = 'all';
 
-        // Основная функция загрузки товаров
         async function loadLZTProducts() {
             showLoading(true);
-
+            
             try {
-                // Имитация загрузки с LZT.market
                 const products = await simulateLZTData();
                 allProducts = products;
-
                 displayProducts();
-                showNotification(`✅ Загружено ${products.length} товаров с LZT.market`, 'success');
-
+                showNotification(`✅ Загружено ${products.length} элитных товаров`, 'success');
             } catch (error) {
                 console.error('Ошибка загрузки:', error);
                 allProducts = getFallbackProducts();
                 displayProducts();
-                showNotification('⚠️ Используем локальные товары', 'warning');
+                showNotification('⚠️ Используем локальную базу', 'warning');
             } finally {
                 showLoading(false);
             }
         }
 
-        // Имитация данных с LZT.market
         async function simulateLZTData() {
             return new Promise((resolve) => {
                 setTimeout(() => {
                     const products = [
                         {
                             id: 1,
-                            name: "💎 Premium Telegram Аккаунт 2018",
-                            description: "Премиум аккаунт с полной историей, высокий репутация на LZT. Идеален для бизнеса.",
-                            price: 450,
-                            originalPrice: 600,
-                            seller: "LZT_Elite",
+                            name: "💀 Shadow Telegram 2015",
+                            description: "Призрачный аккаунт 2015 года. Полная анонимность. Без следов.",
+                            price: 666,
+                            originalPrice: 999,
+                            seller: "Dark_Net_Dealer",
                             rating: 4.9,
                             inStock: true,
                             category: "premium",
-                            icon: "💎",
-                            reviews: 47,
-                            source: "lzt",
-                            features: ["Полная история", "Верификация", "Гарантия 30 дней"]
+                            icon: "💀",
+                            reviews: 66,
+                            source: "lzt"
                         },
                         {
                             id: 2,
-                            name: "🕒 Винтажный Аккаунт 2013",
-                            description: "Редкий аккаунт 2013 года, идеален для коллекционеров и серьезных проектов.",
-                            price: 350,
-                            originalPrice: 500,
-                            seller: "Vintage_Shop",
-                            rating: 4.8,
+                            name: "👑 Blood Diamond TG",
+                            description: "Аккаунт класса люкс. Верификация. Полный доступ. Элита.",
+                            price: 1337,
+                            originalPrice: 1999,
+                            seller: "Elite_Provider",
+                            rating: 5.0,
                             inStock: true,
-                            category: "vintage",
-                            icon: "🕒",
-                            reviews: 23,
-                            source: "lzt",
-                            features: ["2013 год", "Коллекционный", "Редкость"]
+                            category: "premium", 
+                            icon: "👑",
+                            reviews: 13,
+                            source: "lzt"
                         },
                         {
                             id: 3,
-                            name: "👑 VIP Telegram Business",
-                            description: "Бизнес аккаунт с верификацией, полный доступ ко всем функциям.",
-                            price: 800,
-                            originalPrice: 1200,
-                            seller: "Business_Pro",
-                            rating: 5.0,
+                            name: "⚰️ Vintage Soul 2012",
+                            description: "Древний аккаунт 2012. Редкость. Коллекционная ценность.",
+                            price: 888,
+                            originalPrice: 1500,
+                            seller: "Time_Traveler",
+                            rating: 4.8,
                             inStock: false,
-                            category: "business",
-                            icon: "👑",
-                            reviews: 15,
-                            source: "lzt",
-                            features: ["Business функции", "Верификация", "Приоритет поддержка"]
+                            category: "vintage",
+                            icon: "⚰️",
+                            reviews: 37,
+                            source: "lzt"
                         },
                         {
                             id: 4,
-                            name: "🚀 Turbo Telegram 2024",
-                            description: "Свежий аккаунт 2024, максимальная безопасность и чистая история.",
-                            price: 250,
-                            originalPrice: 400,
-                            seller: "Turbo_Accounts",
+                            name: "🔥 Phoenix TG 2024",
+                            description: "Перерожденный аккаунт. Чистая история. Максимальная безопасность.",
+                            price: 444,
+                            originalPrice: 777,
+                            seller: "Reborn_Shop",
                             rating: 4.7,
-                            inStock: true,
-                            category: "hot",
-                            icon: "🚀",
-                            reviews: 34,
-                            source: "lzt",
-                            features: ["2024 год", "Макс. безопасность", "Быстрая доставка"]
-                        },
-                        {
-                            id: 5,
-                            name: "⭐ Gold Status Telegram",
-                            description: "Аккаунт с золотым статусом, эксклюзивные функции и привилегии.",
-                            price: 600,
-                            originalPrice: 900,
-                            seller: "Gold_Provider",
-                            rating: 4.6,
-                            inStock: true,
-                            category: "premium",
-                            icon: "⭐",
-                            reviews: 28,
-                            source: "lzt",
-                            features: ["Gold статус", "Эксклюзив", "Привилегии"]
-                        },
-                        {
-                            id: 6,
-                            name: "🔥 Hot Telegram Premium+",
-                            description: "Горячее предложение! Limited edition аккаунт с особыми возможностями.",
-                            price: 400,
-                            originalPrice: 700,
-                            seller: "Hot_Deals",
-                            rating: 4.5,
                             inStock: true,
                             category: "hot",
                             icon: "🔥",
-                            reviews: 56,
-                            source: "lzt",
-                            features: ["Limited edition", "Особые возможности", "Горячее предложение"]
+                            reviews: 44,
+                            source: "lzt"
                         },
                         {
-                            id: 7,
-                            name: "🎯 Pro Telegram 2016",
-                            description: "Профессиональный аккаунт 2016 года с наработанной репутацией.",
-                            price: 380,
-                            originalPrice: 550,
-                            seller: "Pro_Accounts",
-                            rating: 4.7,
+                            id: 5,
+                            name: "💼 Black Business",
+                            description: "Для теневого бизнеса. Полная конфиденциальность. Без KYC.",
+                            price: 1555,
+                            originalPrice: 2500,
+                            seller: "Corp_Shadow",
+                            rating: 4.9,
                             inStock: true,
-                            category: "vintage",
-                            icon: "🎯",
-                            reviews: 42,
-                            source: "lzt",
-                            features: ["2016 год", "Профессиональный", "Репутация"]
+                            category: "business",
+                            icon: "💼",
+                            reviews: 25,
+                            source: "lzt"
                         },
                         {
-                            id: 8,
-                            name: "⚡ Express Telegram 2023",
-                            description: "Быстрый аккаунт 2023 года, готов к immediate использованию.",
-                            price: 220,
-                            originalPrice: 350,
-                            seller: "Express_Shop",
-                            rating: 4.4,
+                            id: 6,
+                            name: "🎭 Phantom Mask",
+                            description: "Аккаунт-призрак. Смена идентичности. Без отслеживания.",
+                            price: 777,
+                            originalPrice: 1200,
+                            seller: "Ghost_Network",
+                            rating: 4.6,
                             inStock: true,
                             category: "hot",
-                            icon: "⚡",
-                            reviews: 31,
-                            source: "lzt",
-                            features: ["2023 год", "Быстрый старт", "Готов к использованию"]
+                            icon: "🎭",
+                            reviews: 33,
+                            source: "lzt"
                         }
                     ];
                     resolve(products);
@@ -622,116 +665,104 @@
             });
         }
 
-        // Запасные товары
         function getFallbackProducts() {
-            return [
-                {
-                    id: 99,
-                    name: "📱 Базовый Telegram",
-                    description: "Стандартный аккаунт для повседневного использования.",
-                    price: 150,
-                    originalPrice: 200,
-                    seller: "Base_Shop",
-                    rating: 4.3,
-                    inStock: true,
-                    category: "basic",
-                    icon: "📱",
-                    reviews: 18,
-                    source: "local"
-                }
-            ];
+            return [{
+                id: 99,
+                name: "🕶️ Basic Shadow",
+                description: "Базовый аккаунт для начинающих.",
+                price: 222,
+                originalPrice: 333,
+                seller: "Entry_Level",
+                rating: 4.3,
+                inStock: true,
+                category: "basic",
+                icon: "🕶️",
+                reviews: 8,
+                source: "local"
+            }];
         }
 
-        // Отображение товаров
         function displayProducts() {
             const productsGrid = document.getElementById('productsGrid');
             const productCount = document.getElementById('productCount');
-
+            
             if (!productsGrid) return;
-
+            
             const filteredProducts = filterProducts(allProducts);
-
+            
             productsGrid.innerHTML = '';
-
+            
             if (filteredProducts.length === 0) {
                 productsGrid.innerHTML = `
-                    <div style="grid-column: 1 / -1; text-align: center; color: white; padding: 40px;">
-                        <div style="font-size: 4em; margin-bottom: 20px;">😔</div>
+                    <div style="grid-column: 1 / -1; text-align: center; color: #ff6666; padding: 40px;">
+                        <div style="font-size: 4em; margin-bottom: 20px;">🔍</div>
                         <h3>Товары не найдены</h3>
-                        <p>Попробуйте изменить фильтры или обновить страницу</p>
+                        <p>Измените фильтры или обновите базу</p>
                     </div>
                 `;
                 return;
             }
-
+            
             filteredProducts.forEach((product, index) => {
                 const productCard = document.createElement('div');
                 productCard.className = 'product-card';
                 productCard.style.animationDelay = `${index * 0.1}s`;
-
+                
                 productCard.innerHTML = `
                     <div class="product-icon">${product.icon}</div>
                     <h3>${product.name}</h3>
                     <p>${product.description}</p>
-
+                    
                     <div class="product-meta">
                         <div class="seller">👤 ${product.seller}</div>
                         <div class="rating">⭐ ${product.rating} (${product.reviews})</div>
                     </div>
-
+                    
                     <div class="price-section">
-                        <div class="price">${product.price} руб.</div>
-                        ${product.originalPrice > product.price ?
-                            `<div class="original-price">${product.originalPrice} руб.</div>` : ''}
+                        <div class="price">${product.price} ₿</div>
+                        ${product.originalPrice > product.price ? 
+                            `<div class="original-price">${product.originalPrice} ₿</div>` : ''}
                     </div>
-
+                    
                     <div class="stock-status ${product.inStock ? 'in-stock' : 'out-of-stock'}">
-                        ${product.inStock ? '✅ В наличии • Быстрая доставка' : '❌ Нет в наличии'}
+                        ${product.inStock ? '💀 В наличии • Анонимная доставка' : '⚰️ Нет в наличии'}
                     </div>
-
+                    
                     <div class="product-source">
-                        <span class="lzt-badge">LZT.market</span>
+                        <span class="lzt-badge">DARK MARKET</span>
                         <span class="update-time">🕒 ${new Date().toLocaleTimeString()}</span>
                     </div>
-
-                    <button class="btn ${!product.inStock ? 'disabled' : ''}"
+                    
+                    <button class="btn ${!product.inStock ? 'disabled' : ''}" 
                             onclick="addToCart(${product.id})"
                             ${!product.inStock ? 'disabled' : ''}>
-                        ${product.inStock ? '🛒 Добавить в корзину' : '❌ Нет в наличии'}
+                        ${product.inStock ? '💀 Добавить в корзину' : '⚰️ Нет в наличии'}
                     </button>
-
+                    
                     <a href="https://lzt.market/telegram" target="_blank" class="lzt-link">
                         📋 Открыть на LZT.market
                     </a>
                 `;
                 productsGrid.appendChild(productCard);
             });
-
+            
             if (productCount) {
                 const inStockCount = filteredProducts.filter(p => p.inStock).length;
                 productCount.textContent = inStockCount;
             }
         }
 
-        // Фильтрация товаров
         function filterProducts(products) {
             switch(currentFilter) {
-                case 'in-stock':
-                    return products.filter(p => p.inStock);
-                case 'premium':
-                    return products.filter(p => p.category === 'premium');
-                case 'vintage':
-                    return products.filter(p => p.category === 'vintage');
-                case 'business':
-                    return products.filter(p => p.category === 'business');
-                case 'hot':
-                    return products.filter(p => p.category === 'hot');
-                default:
-                    return products;
+                case 'in-stock': return products.filter(p => p.inStock);
+                case 'premium': return products.filter(p => p.category === 'premium');
+                case 'vintage': return products.filter(p => p.category === 'vintage');
+                case 'business': return products.filter(p => p.category === 'business');
+                case 'hot': return products.filter(p => p.category === 'hot');
+                default: return products;
             }
         }
 
-        // Смена фильтра
         function setFilter(filter) {
             currentFilter = filter;
             document.querySelectorAll('.filter-btn').forEach(btn => {
@@ -741,7 +772,6 @@
             displayProducts();
         }
 
-        // Добавление в корзину
         function addToCart(productId) {
             const product = allProducts.find(p => p.id === productId);
             if (product && product.inStock) {
@@ -750,79 +780,72 @@
                     cartId: Date.now(),
                     addedAt: new Date().toLocaleTimeString()
                 });
-
+                
                 updateCartNotification();
-                showNotification(`✅ "${product.name}" добавлен в корзину!`, 'success');
-
-                // Анимация кнопки
-                event.target.innerHTML = '✅ Добавлено!';
-                event.target.style.background = 'linear-gradient(45deg, #27ae60, #2ecc71)';
+                showNotification(`💀 "${product.name}" добавлен в корзину!`, 'success');
+                
+                event.target.innerHTML = '💀 Добавлено!';
+                event.target.style.background = 'linear-gradient(45deg, #006400, #008000)';
                 setTimeout(() => {
-                    event.target.innerHTML = '🛒 Добавить в корзину';
-                    event.target.style.background = 'linear-gradient(45deg, #0088cc, #00a8ff)';
+                    event.target.innerHTML = '💀 Добавить в корзину';
+                    event.target.style.background = 'linear-gradient(45deg, #8b0000, #ff0000)';
                 }, 2000);
             }
         }
 
-        // Обновление корзины
         function updateCartNotification() {
             const notification = document.getElementById('cartNotification');
             const countElement = document.getElementById('cartCount');
             const countDisplay = document.getElementById('cartCountDisplay');
-
-            if (countElement) {
-                countElement.textContent = cartItems.length;
-            }
-            if (countDisplay) {
-                countDisplay.textContent = cartItems.length;
-            }
-
+            
+            if (countElement) countElement.textContent = cartItems.length;
+            if (countDisplay) countDisplay.textContent = cartItems.length;
+            
             if (notification) {
                 notification.style.display = 'block';
                 notification.style.animation = 'none';
                 setTimeout(() => {
                     notification.style.animation = 'bounce 0.5s ease';
                 }, 10);
-
-                // Скрыть через 5 секунд
+                
                 setTimeout(() => {
                     notification.style.display = 'none';
                 }, 5000);
             }
         }
 
-        // Уведомления
         function showNotification(message, type = 'info') {
             const notification = document.createElement('div');
             notification.textContent = message;
-
+            
             const colors = {
-                success: '#27ae60',
-                warning: '#f39c12',
-                error: '#e74c3c',
-                info: '#3498db'
+                success: '#00ff00',
+                warning: '#ffcc00', 
+                error: '#ff0000',
+                info: '#ff6666'
             };
-
+            
             notification.style.cssText = `
                 position: fixed;
                 top: 50%;
                 left: 50%;
                 transform: translate(-50%, -50%);
                 background: rgba(0,0,0,0.95);
-                color: white;
+                color: ${colors[type]};
                 padding: 20px 35px;
                 border-radius: 15px;
                 z-index: 1000;
                 font-size: 1.1em;
                 border: 2px solid ${colors[type]};
-                box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+                box-shadow: 0 0 30px ${colors[type]}50;
                 text-align: center;
                 max-width: 90%;
                 word-wrap: break-word;
+                font-weight: bold;
             `;
-
+            
             document.body.appendChild(notification);
-
+            
             setTimeout(() => {
                 notification.style.opacity = '0';
                 notification.style.transition = 'opacity 0.5s ease';
@@ -830,28 +853,24 @@
             }, 2000);
         }
 
-        // Индикатор загрузки
         function showLoading(show) {
             const productsGrid = document.getElementById('productsGrid');
             if (show) {
                 productsGrid.innerHTML = `
                     <div class="loading">
                         <div class="loading-spinner"></div>
-                        <p>Загрузка товаров с LZT.market...</p>
+                        <p>Загрузка элитных товаров...</p>
                     </div>
                 `;
             }
         }
 
-        // Авто-обновление
         function startAutoRefresh() {
-            // Обновляем каждые 3 минуты
             setInterval(() => {
                 loadLZTProducts();
             }, 180000);
         }
 
-        // Обновление времени
         function updateTime() {
             const timeElement = document.getElementById('currentTime');
             if (timeElement) {
@@ -859,26 +878,22 @@
             }
         }
 
-        // Запуск при загрузке страницы
         document.addEventListener('DOMContentLoaded', function() {
             loadLZTProducts();
             startAutoRefresh();
-
-            // Обновление времени каждую секунду
+            
             setInterval(updateTime, 1000);
             updateTime();
-
-            // Показываем приветственное сообщение
+            
             setTimeout(() => {
-                showNotification('🚀 Добро пожаловать в PREMIUM Telegram Shop!', 'success');
+                showNotification('💀 Добро пожаловать в ELITE TELEGRAM SHOP!', 'success');
             }, 1000);
         });
 
-        // Обработка ошибок
         window.addEventListener('error', function(e) {
             console.error('Global error:', e.error);
-            showNotification('⚠️ Произошла ошибка. Обновите страницу.', 'error');
+            showNotification('⚰️ Произошла ошибка. Обновите страницу.', 'error');
         });
     </script>
 </body>
-</html>c
+</html>
