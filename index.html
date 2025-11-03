@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>⚡ ELITE TELEGRAM SHOP | Черный рынок премиум аккаунтов</title>
+    <title>⚡ ELITE TELEGRAM SHOP | Черный рынок премиум номеров</title>
     <style>
         * {
             margin: 0;
@@ -19,7 +19,6 @@
             padding: 0;
         }
 
-        /* Анимированный фон */
         .bg-animation {
             position: fixed;
             top: 0;
@@ -28,8 +27,7 @@
             height: 100%;
             background:
                 radial-gradient(circle at 20% 80%, rgba(255, 0, 0, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 80% 20%, rgba(139, 0, 0, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 40% 40%, rgba(178, 34, 34, 0.05) 0%, transparent 50%);
+                radial-gradient(circle at 80% 20%, rgba(139, 0, 0, 0.1) 0%, transparent 50%);
             z-index: -1;
         }
 
@@ -39,7 +37,6 @@
             padding: 20px;
         }
 
-        /* Хедер в стиле киберпанк */
         .header {
             text-align: center;
             margin-bottom: 40px;
@@ -63,21 +60,18 @@
         }
 
         .header h1 {
-            font-size: 4em;
+            font-size: 3.5em;
             margin-bottom: 15px;
-            background: linear-gradient(45deg, #ff0000, #8b0000, #ff4500);
+            background: linear-gradient(45deg, #ff0000, #8b0000);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             text-shadow: 0 0 30px rgba(255,0,0,0.5);
-            font-weight: bold;
-            letter-spacing: 2px;
         }
 
         .header p {
             font-size: 1.3em;
             color: #ccc;
             margin-bottom: 10px;
-            text-shadow: 0 0 10px rgba(255,0,0,0.3);
         }
 
         .stats {
@@ -95,7 +89,6 @@
             border: 1px solid #8b0000;
             font-weight: 500;
             color: #ffcccb;
-            box-shadow: 0 0 15px rgba(255,0,0,0.2);
         }
 
         .cart-link {
@@ -108,15 +101,13 @@
             font-weight: bold;
             margin-top: 20px;
             transition: all 0.3s ease;
-            box-shadow: 0 0 15px rgba(255,0,0,0.3);
         }
 
         .cart-link:hover {
             transform: translateY(-2px);
-            box-shadow: 0 5px 20px rgba(255,0,0,0.5);
+            box-shadow: 0 5px 15px rgba(255,0,0,0.3);
         }
 
-        /* Фильтры в стиле неон */
         .filters {
             background: rgba(0, 0, 0, 0.8);
             padding: 25px;
@@ -127,7 +118,6 @@
             gap: 15px;
             flex-wrap: wrap;
             align-items: center;
-            box-shadow: 0 0 30px rgba(255,0,0,0.1);
         }
 
         .filter-btn {
@@ -138,21 +128,18 @@
             cursor: pointer;
             transition: all 0.3s ease;
             font-weight: 500;
-            font-size: 0.95em;
             color: #ffcccb;
         }
 
         .filter-btn.active {
             background: linear-gradient(45deg, #ff0000, #8b0000);
             color: #000;
-            box-shadow: 0 0 20px rgba(255,0,0,0.5);
             border: 1px solid #ff0000;
         }
 
         .filter-btn:hover {
             background: rgba(255, 0, 0, 0.5);
             transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(255,0,0,0.3);
         }
 
         .refresh-btn {
@@ -165,17 +152,12 @@
             font-weight: bold;
             margin-left: auto;
             transition: all 0.3s ease;
-            box-shadow: 0 0 20px rgba(255,0,0,0.3);
-            text-transform: uppercase;
-            letter-spacing: 1px;
         }
 
         .refresh-btn:hover {
             transform: translateY(-2px);
-            box-shadow: 0 0 30px rgba(255,0,0,0.6);
         }
 
-        /* Сетка товаров - стиль dark elite */
         .products-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
@@ -191,8 +173,6 @@
             border: 1px solid #8b0000;
             position: relative;
             overflow: hidden;
-            animation: fadeIn 0.6s ease;
-            box-shadow: 0 0 20px rgba(139,0,0,0.1);
         }
 
         .product-card::before {
@@ -202,25 +182,11 @@
             left: 0;
             right: 0;
             height: 3px;
-            background: linear-gradient(45deg, #ff0000, #8b0000, #ff4500);
-        }
-
-        .product-card::after {
-            content: 'ELITE';
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            background: rgba(255,0,0,0.2);
-            color: #ffcccb;
-            padding: 2px 8px;
-            border-radius: 10px;
-            font-size: 0.7em;
-            font-weight: bold;
+            background: linear-gradient(45deg, #ff0000, #8b0000);
         }
 
         .product-card:hover {
             transform: translateY(-8px);
-            box-shadow: 0 10px 30px rgba(255,0,0,0.3);
             border: 1px solid #ff0000;
         }
 
@@ -228,7 +194,6 @@
             font-size: 3.5em;
             margin-bottom: 15px;
             text-align: center;
-            filter: drop-shadow(0 0 10px rgba(255,0,0,0.5));
         }
 
         .product-card h3 {
@@ -236,15 +201,12 @@
             margin-bottom: 12px;
             font-size: 1.4em;
             font-weight: 600;
-            line-height: 1.3;
         }
 
         .product-card p {
             color: #aaa;
             margin-bottom: 15px;
             line-height: 1.5;
-            font-size: 0.95em;
-            min-height: 45px;
         }
 
         .product-meta {
@@ -273,7 +235,6 @@
             font-size: 2.2em;
             color: #ff4444;
             font-weight: bold;
-            text-shadow: 0 0 10px rgba(255,0,0,0.3);
         }
 
         .original-price {
@@ -290,19 +251,16 @@
             text-align: center;
             margin: 15px 0;
             font-size: 0.9em;
-            border: 2px solid transparent;
         }
 
         .in-stock {
             background: rgba(0, 100, 0, 0.3);
             color: #90ee90;
-            border-color: #006400;
         }
 
         .out-of-stock {
             background: rgba(139, 0, 0, 0.3);
             color: #ffcccb;
-            border-color: #8b0000;
         }
 
         .product-source {
@@ -319,12 +277,10 @@
             padding: 5px 12px;
             border-radius: 15px;
             font-weight: bold;
-            font-size: 0.85em;
         }
 
         .update-time {
             color: #888;
-            font-size: 0.85em;
         }
 
         .btn {
@@ -339,47 +295,18 @@
             transition: all 0.3s ease;
             font-weight: bold;
             margin: 10px 0;
-            box-shadow: 0 0 15px rgba(255,0,0,0.3);
-            text-transform: uppercase;
-            letter-spacing: 1px;
         }
 
         .btn:hover {
-            background: linear-gradient(45deg, #ff0000, #8b0000);
             transform: scale(1.02);
-            box-shadow: 0 0 25px rgba(255,0,0,0.6);
         }
 
         .btn.disabled {
             background: #333;
             color: #666;
             cursor: not-allowed;
-            transform: none;
-            box-shadow: none;
         }
 
-        .btn.disabled:hover {
-            transform: none;
-            box-shadow: none;
-        }
-
-        .lzt-link {
-            display: block;
-            text-align: center;
-            margin-top: 12px;
-            color: #ff6666;
-            text-decoration: none;
-            font-size: 0.9em;
-            transition: color 0.3s ease;
-            font-weight: 500;
-        }
-
-        .lzt-link:hover {
-            color: #ff0000;
-            text-decoration: underline;
-        }
-
-        /* Корзина - неон красный */
         .cart-notification {
             position: fixed;
             top: 20px;
@@ -389,15 +316,10 @@
             padding: 16px 28px;
             border-radius: 25px;
             font-weight: bold;
-            box-shadow: 0 0 30px rgba(255,0,0,0.5);
             z-index: 1000;
             display: none;
-            animation: bounce 0.5s ease;
-            font-size: 1.1em;
-            border: 2px solid #ff0000;
         }
 
-        /* Футер */
         .footer {
             text-align: center;
             color: #ccc;
@@ -423,56 +345,12 @@
             border-radius: 15px;
             background: rgba(139, 0, 0, 0.3);
             transition: all 0.3s ease;
-            border: 1px solid #8b0000;
         }
 
         .footer-link:hover {
             background: rgba(255, 0, 0, 0.3);
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(255,0,0,0.2);
         }
 
-        /* Анимации */
-        @keyframes bounce {
-            0%, 20%, 60%, 100% {transform: translateY(0);}
-            40% {transform: translateY(-8px);}
-            80% {transform: translateY(-4px);}
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        @keyframes shine {
-            0% { left: -100%; }
-            100% { left: 100%; }
-        }
-
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
-        }
-
-        @keyframes glow {
-            0%, 100% { box-shadow: 0 0 20px rgba(255,0,0,0.3); }
-            50% { box-shadow: 0 0 30px rgba(255,0,0,0.6); }
-        }
-
-        /* Адаптивность */
-        @media (max-width: 768px) {
-            .header h1 { font-size: 2.5em; }
-            .header p { font-size: 1.1em; }
-            .products-grid { grid-template-columns: 1fr; }
-            .stats { flex-direction: column; gap: 10px; }
-            .filters { flex-direction: column; }
-            .refresh-btn { margin-left: 0; width: 100%; }
-            .filter-btn { width: 100%; text-align: center; }
-            .footer-links { flex-direction: column; gap: 10px; }
-        }
-
-        /* Загрузка */
         .loading {
             text-align: center;
             color: #ffcccb;
@@ -494,69 +372,70 @@
             0% { transform: rotate(0deg); }
             100% { transform: rotate(360deg); }
         }
+
+        @keyframes shine {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+
+        @media (max-width: 768px) {
+            .header h1 { font-size: 2.5em; }
+            .products-grid { grid-template-columns: 1fr; }
+            .stats { flex-direction: column; gap: 10px; }
+            .filters { flex-direction: column; }
+            .refresh-btn { margin-left: 0; width: 100%; }
+        }
     </style>
 </head>
 <body>
-    <!-- Анимированный фон -->
     <div class="bg-animation"></div>
 
     <div class="container">
-        <!-- Хедер -->
         <div class="header">
             <h1>⚡ ELITE TELEGRAM SHOP</h1>
-            <p>Черный рынок премиум аккаунтов • Только эксклюзив • Анонимно</p>
-
+            <p>Номера телефонов со всего мира • Цены от 90₽ • Моментальная доставка</p>
+            
             <div class="stats">
                 <div class="stat-item">🕒 <span id="currentTime">--:--:--</span></div>
                 <div class="stat-item">📦 Товаров: <span id="productCount">0</span></div>
                 <div class="stat-item">🛒 В корзине: <span id="cartCount">0</span></div>
-                <div class="stat-item">⭐ Рейтинг: 4.9/5</div>
             </div>
 
-            <!-- Ссылка на корзину -->
             <a href="cart.html" class="cart-link" id="cartLink">
                 🛒 Перейти в корзину (<span id="headerCartCount">0</span>)
             </a>
         </div>
 
-        <!-- Фильтры -->
         <div class="filters">
             <button class="filter-btn active" onclick="setFilter('all')">🎲 Все товары</button>
             <button class="filter-btn" onclick="setFilter('in-stock')">💀 В наличии</button>
-            <button class="filter-btn" onclick="setFilter('premium')">👑 Премиум</button>
-            <button class="filter-btn" onclick="setFilter('vintage')">⚰️ Винтаж</button>
-            <button class="filter-btn" onclick="setFilter('business')">💼 Бизнес</button>
-            <button class="filter-btn" onclick="setFilter('new')">🆕 Новые</button>
-            <button class="filter-btn" onclick="setFilter('security')">🔐 Безопасные</button>
+            <button class="filter-btn" onclick="setFilter('usa')">🇺🇸 США</button>
+            <button class="filter-btn" onclick="setFilter('europe')">🇪🇺 Европа</button>
+            <button class="filter-btn" onclick="setFilter('asia')">🌏 Азия</button>
+            <button class="filter-btn" onclick="setFilter('premium')">💎 Премиум</button>
             <button class="filter-btn" onclick="setFilter('budget')">💰 Бюджет</button>
-            <button class="refresh-btn" onclick="loadLZTProducts()">
-                🔄 Обновить базу
-            </button>
+            <button class="refresh-btn" onclick="loadProducts()">🔄 Обновить</button>
         </div>
 
-        <!-- Сетка товаров -->
         <div class="products-grid" id="productsGrid">
             <div class="loading">
                 <div class="loading-spinner"></div>
-                <p>Загрузка элитных товаров...</p>
+                <p>Загрузка товаров...</p>
             </div>
         </div>
 
-        <!-- Футер -->
         <div class="footer">
-            <p>© 2024 ELITE TELEGRAM SHOP. Анонимный черный рынок.</p>
-            <p>Все операции защищены • Без логирования • Только крипта</p>
-
+            <p>© 2024 ELITE TELEGRAM SHOP. Номера от 90₽ до 280₽</p>
+            <p>Моментальная доставка • Гарантия качества • Поддержка 24/7</p>
+            
             <div class="footer-links">
-                <a href="#" class="footer-link">📞 Поддержка (Tor)</a>
-                <a href="#" class="footer-link">🔒 Безопасность</a>
-                <a href="#" class="footer-link">💎 Гарантии</a>
-                <a href="https://lzt.market" target="_blank" class="footer-link">🌐 LZT.market</a>
+                <a href="cart.html" class="footer-link">🛒 Корзина</a>
+                <a href="https://t.me/awoeg" target="_blank" class="footer-link">📞 Поддержка</a>
+                <a href="https://discord.gg/arestt" target="_blank" class="footer-link">🎮 Discord</a>
             </div>
         </div>
     </div>
 
-    <!-- Уведомление корзины -->
     <div class="cart-notification" id="cartNotification">
         🛒 В корзине: <span id="cartCountDisplay">0</span> товаров
     </div>
@@ -566,7 +445,6 @@
         let allProducts = [];
         let currentFilter = 'all';
 
-        // Загрузка корзины из localStorage
         function loadCartFromStorage() {
             const savedCart = localStorage.getItem('eliteTelegramCart');
             if (savedCart) {
@@ -576,7 +454,6 @@
             }
         }
 
-        // Обновление счетчика в хедере
         function updateHeaderCartCount() {
             const countElement = document.getElementById('headerCartCount');
             if (countElement) {
@@ -584,365 +461,230 @@
             }
         }
 
-        // Основная функция загрузки товаров
-        async function loadLZTProducts() {
+        async function loadProducts() {
             showLoading(true);
-
+            
             try {
-                const products = await loadRealLZTProducts();
+                const products = await loadRealProducts();
                 allProducts = products;
                 displayProducts();
-                showNotification(`✅ Загружено ${products.length} реальных товаров с LZT.market`, 'success');
             } catch (error) {
                 console.error('Ошибка загрузки:', error);
                 allProducts = getFallbackProducts();
                 displayProducts();
-                showNotification('⚠️ Используем локальные товары', 'warning');
             } finally {
                 showLoading(false);
             }
         }
 
-        // Реальные товары с LZT.market
-        async function loadRealLZTProducts() {
-            // Имитация загрузки реальных данных
+        async function loadRealProducts() {
             return new Promise((resolve) => {
                 setTimeout(() => {
                     resolve([
-                        {
-                            id: 101,
-                            name: "Telegram Premium 2018 (LZT Verified)",
-                            description: "Премиум аккаунт 2018 года, полная история, верифицирован на LZT",
-                            price: 650,
-                            originalPrice: 850,
-                            seller: "TrustedSeller_88",
-                            rating: 4.9,
-                            inStock: true,
-                            category: "premium",
-                            icon: "💎",
-                            reviews: 127,
-                            source: "lzt-real",
-                            link: "https://lzt.market/telegram"
-                        },
-                        {
-                            id: 102,
-                            name: "Vintage TG 2014 • Rare Find",
-                            description: "Редкий аккаунт 2014 года, коллекционная ценность",
-                            price: 420,
-                            originalPrice: 600,
-                            seller: "VintageHunter",
-                            rating: 4.8,
-                            inStock: true,
-                            category: "vintage",
-                            icon: "🕒",
-                            reviews: 89,
-                            source: "lzt-real",
-                            link: "https://lzt.market/telegram"
-                        },
-                        {
-                            id: 103,
-                            name: "Business Telegram PRO",
-                            description: "Для бизнеса, верификация, приоритет поддержка",
-                            price: 1200,
-                            originalPrice: 1600,
-                            seller: "BusinessSolutions",
-                            rating: 5.0,
-                            inStock: true,
-                            category: "business",
-                            icon: "💼",
-                            reviews: 45,
-                            source: "lzt-real",
-                            link: "https://lzt.market/telegram"
-                        },
-                        {
-                            id: 104,
-                            name: "Fresh 2024 Telegram Account",
-                            description: "Новый аккаунт 2024, чистая история, максимальная безопасность",
-                            price: 280,
-                            originalPrice: 400,
-                            seller: "FreshAccounts",
-                            rating: 4.7,
-                            inStock: true,
-                            category: "new",
-                            icon: "🆕",
-                            reviews: 234,
-                            source: "lzt-real",
-                            link: "https://lzt.market/telegram"
-                        },
-                        {
-                            id: 105,
-                            name: "Elite Russian TG 2016",
-                            description: "Элитный русскоязычный аккаунт, премиум качество",
-                            price: 750,
-                            originalPrice: 950,
-                            seller: "RussianElite",
-                            rating: 4.9,
-                            inStock: false,
-                            category: "premium",
-                            icon: "👑",
-                            reviews: 67,
-                            source: "lzt-real",
-                            link: "https://lzt.market/telegram"
-                        },
-                        {
-                            id: 106,
-                            name: "Anonymous Telegram 2023",
-                            description: "Анонимный аккаунт, без привязок, полная конфиденциальность",
-                            price: 380,
-                            originalPrice: 500,
-                            seller: "AnonymousDealer",
-                            rating: 4.6,
-                            inStock: true,
-                            category: "security",
-                            icon: "🎭",
-                            reviews: 156,
-                            source: "lzt-real",
-                            link: "https://lzt.market/telegram"
-                        },
-                        {
-                            id: 107,
-                            name: "OG Telegram 2013 • Legendary",
-                            description: "Легендарный аккаунт 2013 года, историческая ценность",
-                            price: 1500,
-                            originalPrice: 2000,
-                            seller: "TimeTraveler",
-                            rating: 5.0,
-                            inStock: true,
-                            category: "vintage",
-                            icon: "⚡",
-                            reviews: 23,
-                            source: "lzt-real",
-                            link: "https://lzt.market/telegram"
-                        },
-                        {
-                            id: 108,
-                            name: "Mass DM Telegram Business",
-                            description: "Для массовых рассылок, отличная репутация",
-                            price: 550,
-                            originalPrice: 750,
-                            seller: "MassDMPro",
-                            rating: 4.5,
-                            inStock: true,
-                            category: "business",
-                            icon: "📢",
-                            reviews: 89,
-                            source: "lzt-real",
-                            link: "https://lzt.market/telegram"
-                        },
-                        {
-                            id: 109,
-                            name: "European TG Account 2017",
-                            description: "Европейский аккаунт, GEO: EU, стабильный",
-                            price: 480,
-                            originalPrice: 650,
-                            seller: "EuroAccounts",
-                            rating: 4.7,
-                            inStock: true,
-                            category: "premium",
-                            icon: "🇪🇺",
-                            reviews: 112,
-                            source: "lzt-real",
-                            link: "https://lzt.market/telegram"
-                        },
-                        {
-                            id: 110,
-                            name: "Quick Delivery Telegram",
-                            description: "Мгновенная доставка, автоматическая выдача",
-                            price: 320,
-                            originalPrice: 450,
-                            seller: "InstantShop",
-                            rating: 4.8,
-                            inStock: true,
-                            category: "new",
-                            icon: "🚀",
-                            reviews: 278,
-                            source: "lzt-real",
-                            link: "https://lzt.market/telegram"
-                        },
-                        {
-                            id: 111,
-                            name: "Premium+ Telegram 2020",
-                            description: "Улучшенный премиум аккаунт, все функции разблокированы",
-                            price: 880,
-                            originalPrice: 1100,
-                            seller: "PremiumPlus",
-                            rating: 4.9,
-                            inStock: true,
-                            category: "premium",
-                            icon: "⭐",
-                            reviews: 76,
-                            source: "lzt-real",
-                            link: "https://lzt.market/telegram"
-                        },
-                        {
-                            id: 112,
-                            name: "Budget Telegram 2022",
-                            description: "Бюджетный вариант, хорошее качество за доступную цену",
-                            price: 190,
-                            originalPrice: 280,
-                            seller: "BudgetDeals",
-                            rating: 4.3,
-                            inStock: true,
-                            category: "budget",
-                            icon: "💰",
-                            reviews: 345,
-                            source: "lzt-real",
-                            link: "https://lzt.market/telegram"
-                        },
-                        {
-                            id: 113,
-                            name: "US Telegram 2019 • English",
-                            description: "Американский аккаунт, английский язык, стабильный",
-                            price: 520,
-                            originalPrice: 700,
-                            seller: "US_Accounts",
-                            rating: 4.6,
-                            inStock: true,
-                            category: "premium",
-                            icon: "🇺🇸",
-                            reviews: 98,
-                            source: "lzt-real",
-                            link: "https://lzt.market/telegram"
-                        },
-                        {
-                            id: 114,
-                            name: "Secure Telegram 2021",
-                            description: "Максимальная безопасность, двухфакторная аутентификация",
-                            price: 440,
-                            originalPrice: 580,
-                            seller: "SecurityFirst",
-                            rating: 4.8,
-                            inStock: true,
-                            category: "security",
-                            icon: "🔒",
-                            reviews: 167,
-                            source: "lzt-real",
-                            link: "https://lzt.market/telegram"
-                        },
-                        {
-                            id: 115,
-                            name: "VIP Telegram Gold",
-                            description: "Золотой статус, эксклюзивные функции, приоритет",
-                            price: 950,
-                            originalPrice: 1300,
-                            seller: "VIP_Club",
-                            rating: 5.0,
-                            inStock: true,
-                            category: "premium",
-                            icon: "👑",
-                            reviews: 34,
-                            source: "lzt-real",
-                            link: "https://lzt.market/telegram"
-                        }
+                        // 🇺🇸 США (Премиум)
+                        {id: 1, name: "🇺🇸 USA +1 | Premium 2 Years", description: "Премиум аккаунт США, 2 года, верифицированный", price: 250, originalPrice: 400, seller: "Premium_USA", rating: 4.9, inStock: true, category: "usa premium", icon: "🇺🇸", reviews: 512},
+                        {id: 2, name: "🇺🇸 USA +1 | Business Number", description: "Бизнес номер США для компаний", price: 220, originalPrice: 350, seller: "Business_Accounts", rating: 4.8, inStock: true, category: "usa premium", icon: "💼", reviews: 287},
+                        {id: 3, name: "🇺🇸 USA +1 | 1 Year Verified", description: "Верифицированный номер, 1 год", price: 180, originalPrice: 280, seller: "Verified_US", rating: 4.7, inStock: true, category: "usa", icon: "🇺🇸", reviews: 423},
+                        {id: 4, name: "🇺🇸 USA +1 | Fresh Number", description: "Новый номер США, моментальная доставка", price: 150, originalPrice: 220, seller: "Fresh_USA", rating: 4.6, inStock: true, category: "usa", icon: "🇺🇸", reviews: 334},
+                        {id: 5, name: "🇺🇸 USA +1 | Basic Account", description: "Базовый номер США, 3 месяца", price: 120, originalPrice: 180, seller: "Basic_US", rating: 4.4, inStock: true, category: "usa budget", icon: "🇺🇸", reviews: 198},
+
+                        // 🇨🇦 Канада
+                        {id: 6, name: "🇨🇦 Canada +1 | Premium CA", description: "Премиум канадский номер", price: 200, originalPrice: 320, seller: "Canada_Premium", rating: 4.8, inStock: true, category: "canada premium", icon: "🇨🇦", reviews: 156},
+                        {id: 7, name: "🇨🇦 Canada +1 | Fresh CA", description: "Новый номер Канады", price: 140, originalPrice: 200, seller: "CA_Fresh", rating: 4.6, inStock: true, category: "canada", icon: "🇨🇦", reviews: 89},
+
+                        // 🇬🇧 Великобритания
+                        {id: 8, name: "🇬🇧 UK +44 | Business UK", description: "Бизнес номер Великобритании", price: 230, originalPrice: 380, seller: "UK_Business", rating: 4.9, inStock: true, category: "europe premium", icon: "🇬🇧", reviews: 267},
+                        {id: 9, name: "🇬🇧 UK +44 | Premium Number", description: "Премиум британский номер", price: 190, originalPrice: 290, seller: "UK_Premium", rating: 4.7, inStock: true, category: "europe premium", icon: "🇬🇧", reviews: 178},
+                        {id: 10, name: "🇬🇧 UK +44 | Standard UK", description: "Стандартный номер UK", price: 150, originalPrice: 220, seller: "UK_Standard", rating: 4.5, inStock: true, category: "europe", icon: "🇬🇧", reviews: 145},
+
+                        // 🇩🇪 Германия
+                        {id: 11, name: "🇩🇪 Germany +49 | Business DE", description: "Бизнес номер Германии", price: 210, originalPrice: 340, seller: "DE_Business", rating: 4.8, inStock: true, category: "europe premium", icon: "🇩🇪", reviews: 189},
+                        {id: 12, name: "🇩🇪 Germany +49 | Premium DE", description: "Премиум немецкий номер", price: 170, originalPrice: 260, seller: "DE_Premium", rating: 4.7, inStock: true, category: "europe premium", icon: "🇩🇪", reviews: 134},
+                        {id: 13, name: "🇩🇪 Germany +49 | Standard DE", description: "Стандартный номер Германии", price: 130, originalPrice: 190, seller: "DE_Standard", rating: 4.5, inStock: true, category: "europe", icon: "🇩🇪", reviews: 98},
+
+                        // 🇫🇷 Франция
+                        {id: 14, name: "🇫🇷 France +33 | Premium FR", description: "Премиум французский номер", price: 180, originalPrice: 280, seller: "FR_Premium", rating: 4.7, inStock: true, category: "europe premium", icon: "🇫🇷", reviews: 112},
+                        {id: 15, name: "🇫🇷 France +33 | Standard FR", description: "Стандартный номер Франции", price: 140, originalPrice: 200, seller: "FR_Standard", rating: 4.5, inStock: true, category: "europe", icon: "🇫🇷", reviews: 87},
+
+                        // 🇮🇹 Италия
+                        {id: 16, name: "🇮🇹 Italy +39 | Premium IT", description: "Премиум итальянский номер", price: 170, originalPrice: 260, seller: "IT_Premium", rating: 4.6, inStock: true, category: "europe premium", icon: "🇮🇹", reviews: 76},
+                        {id: 17, name: "🇮🇹 Italy +39 | Standard IT", description: "Стандартный номер Италии", price: 130, originalPrice: 180, seller: "IT_Standard", rating: 4.4, inStock: true, category: "europe", icon: "🇮🇹", reviews: 54},
+
+                        // 🇪🇸 Испания
+                        {id: 18, name: "🇪🇸 Spain +34 | Premium ES", description: "Премиум испанский номер", price: 160, originalPrice: 240, seller: "ES_Premium", rating: 4.6, inStock: true, category: "europe premium", icon: "🇪🇸", reviews: 89},
+                        {id: 19, name: "🇪🇸 Spain +34 | Standard ES", description: "Стандартный номер Испании", price: 120, originalPrice: 170, seller: "ES_Standard", rating: 4.4, inStock: true, category: "europe", icon: "🇪🇸", reviews: 67},
+
+                        // 🇵🇱 Польша
+                        {id: 20, name: "🇵🇱 Poland +48 | Premium PL", description: "Премиум польский номер", price: 150, originalPrice: 220, seller: "PL_Premium", rating: 4.5, inStock: true, category: "europe premium", icon: "🇵🇱", reviews: 78},
+                        {id: 21, name: "🇵🇱 Poland +48 | Budget PL", description: "Бюджетный номер Польши", price: 100, originalPrice: 150, seller: "PL_Budget", rating: 4.3, inStock: true, category: "europe budget", icon: "🇵🇱", reviews: 45},
+
+                        // 🇳🇱 Нидерланды
+                        {id: 22, name: "🇳🇱 Netherlands +31 | Premium NL", description: "Премиум голландский номер", price: 170, originalPrice: 250, seller: "NL_Premium", rating: 4.7, inStock: true, category: "europe premium", icon: "🇳🇱", reviews: 92},
+                        {id: 23, name: "🇳🇱 Netherlands +31 | Standard NL", description: "Стандартный номер Нидерландов", price: 130, originalPrice: 190, seller: "NL_Standard", rating: 4.5, inStock: true, category: "europe", icon: "🇳🇱", reviews: 61},
+
+                        // 🇸🇪 Швеция
+                        {id: 24, name: "🇸🇪 Sweden +46 | Premium SE", description: "Премиум шведский номер", price: 190, originalPrice: 290, seller: "SE_Premium", rating: 4.8, inStock: true, category: "europe premium", icon: "🇸🇪", reviews: 84},
+                        {id: 25, name: "🇸🇪 Sweden +46 | Standard SE", description: "Стандартный номер Швеции", price: 140, originalPrice: 210, seller: "SE_Standard", rating: 4.6, inStock: true, category: "europe", icon: "🇸🇪", reviews: 53},
+
+                        // 🇨🇳 Китай
+                        {id: 26, name: "🇨🇳 China +86 | Business CN", description: "Бизнес номер Китая", price: 220, originalPrice: 350, seller: "CN_Business", rating: 4.8, inStock: true, category: "asia premium", icon: "🇨🇳", reviews: 234},
+                        {id: 27, name: "🇨🇳 China +86 | Premium CN", description: "Премиум китайский номер", price: 180, originalPrice: 270, seller: "CN_Premium", rating: 4.7, inStock: true, category: "asia premium", icon: "🇨🇳", reviews: 167},
+                        {id: 28, name: "🇨🇳 China +86 | Standard CN", description: "Стандартный номер Китая", price: 140, originalPrice: 200, seller: "CN_Standard", rating: 4.5, inStock: true, category: "asia", icon: "🇨🇳", reviews: 98},
+                        {id: 29, name: "🇨🇳 China +86 | Budget CN", description: "Бюджетный номер Китая", price: 110, originalPrice: 160, seller: "CN_Budget", rating: 4.3, inStock: true, category: "asia budget", icon: "🇨🇳", reviews: 67},
+
+                        // 🇯🇵 Япония
+                        {id: 30, name: "🇯🇵 Japan +81 | Business JP", description: "Бизнес номер Японии", price: 240, originalPrice: 380, seller: "JP_Business", rating: 4.9, inStock: true, category: "asia premium", icon: "🇯🇵", reviews: 189},
+                        {id: 31, name: "🇯🇵 Japan +81 | Premium JP", description: "Премиум японский номер", price: 190, originalPrice: 290, seller: "JP_Premium", rating: 4.8, inStock: true, category: "asia premium", icon: "🇯🇵", reviews: 134},
+                        {id: 32, name: "🇯🇵 Japan +81 | Standard JP", description: "Стандартный номер Японии", price: 150, originalPrice: 220, seller: "JP_Standard", rating: 4.6, inStock: true, category: "asia", icon: "🇯🇵", reviews: 89},
+
+                        // 🇰🇷 Южная Корея
+                        {id: 33, name: "🇰🇷 Korea +82 | Business KR", description: "Бизнес номер Кореи", price: 230, originalPrice: 360, seller: "KR_Business", rating: 4.8, inStock: true, category: "asia premium", icon: "🇰🇷", reviews: 156},
+                        {id: 34, name: "🇰🇷 Korea +82 | Premium KR", description: "Премиум корейский номер", price: 180, originalPrice: 270, seller: "KR_Premium", rating: 4.7, inStock: true, category: "asia premium", icon: "🇰🇷", reviews: 112},
+                        {id: 35, name: "🇰🇷 Korea +82 | Standard KR", description: "Стандартный номер Кореи", price: 140, originalPrice: 200, seller: "KR_Standard", rating: 4.5, inStock: true, category: "asia", icon: "🇰🇷", reviews: 78},
+
+                        // 🇮🇳 Индия
+                        {id: 36, name: "🇮🇳 India +91 | Business IN", description: "Бизнес номер Индии", price: 160, originalPrice: 240, seller: "IN_Business", rating: 4.7, inStock: true, category: "asia premium", icon: "🇮🇳", reviews: 287},
+                        {id: 37, name: "🇮🇳 India +91 | Premium IN", description: "Премиум индийский номер", price: 130, originalPrice: 190, seller: "IN_Premium", rating: 4.6, inStock: true, category: "asia premium", icon: "🇮🇳", reviews: 234},
+                        {id: 38, name: "🇮🇳 India +91 | Standard IN", description: "Стандартный номер Индии", price: 100, originalPrice: 150, seller: "IN_Standard", rating: 4.4, inStock: true, category: "asia", icon: "🇮🇳", reviews: 178},
+                        {id: 39, name: "🇮🇳 India +91 | Budget IN", description: "Бюджетный номер Индии", price: 90, originalPrice: 130, seller: "IN_Budget", rating: 4.2, inStock: true, category: "asia budget", icon: "🇮🇳", reviews: 145},
+
+                        // 🇦🇪 ОАЭ
+                        {id: 40, name: "🇦🇪 UAE +971 | Business AE", description: "Бизнес номер ОАЭ", price: 280, originalPrice: 450, seller: "AE_Business", rating: 4.9, inStock: true, category: "asia premium", icon: "🇦🇪", reviews: 134},
+                        {id: 41, name: "🇦🇪 UAE +971 | Premium AE", description: "Премиум номер ОАЭ", price: 220, originalPrice: 350, seller: "AE_Premium", rating: 4.8, inStock: true, category: "asia premium", icon: "🇦🇪", reviews: 89},
+
+                        // 🇸🇬 Сингапур
+                        {id: 42, name: "🇸🇬 Singapore +65 | Business SG", description: "Бизнес номер Сингапура", price: 260, originalPrice: 420, seller: "SG_Business", rating: 4.9, inStock: true, category: "asia premium", icon: "🇸🇬", reviews: 98},
+                        {id: 43, name: "🇸🇬 Singapore +65 | Premium SG", description: "Премиум номер Сингапура", price: 200, originalPrice: 320, seller: "SG_Premium", rating: 4.7, inStock: true, category: "asia premium", icon: "🇸🇬", reviews: 67},
+
+                        // 🇦🇺 Австралия
+                        {id: 44, name: "🇦🇺 Australia +61 | Business AU", description: "Бизнес номер Австралии", price: 240, originalPrice: 380, seller: "AU_Business", rating: 4.8, inStock: true, category: "premium", icon: "🇦🇺", reviews: 112},
+                        {id: 45, name: "🇦🇺 Australia +61 | Premium AU", description: "Премиум австралийский номер", price: 190, originalPrice: 290, seller: "AU_Premium", rating: 4.7, inStock: true, category: "premium", icon: "🇦🇺", reviews: 78},
+
+                        // 🇧🇷 Бразилия
+                        {id: 46, name: "🇧🇷 Brazil +55 | Premium BR", description: "Премиум бразильский номер", price: 170, originalPrice: 260, seller: "BR_Premium", rating: 4.6, inStock: true, category: "premium", icon: "🇧🇷", reviews: 89},
+                        {id: 47, name: "🇧🇷 Brazil +55 | Standard BR", description: "Стандартный номер Бразилии", price: 130, originalPrice: 190, seller: "BR_Standard", rating: 4.4, inStock: true, category: "budget", icon: "🇧🇷", reviews: 56},
+
+                        // 🇲🇽 Мексика
+                        {id: 48, name: "🇲🇽 Mexico +52 | Premium MX", description: "Премиум мексиканский номер", price: 160, originalPrice: 240, seller: "MX_Premium", rating: 4.5, inStock: true, category: "premium", icon: "🇲🇽", reviews: 67},
+                        {id: 49, name: "🇲🇽 Mexico +52 | Budget MX", description: "Бюджетный номер Мексики", price: 110, originalPrice: 160, seller: "MX_Budget", rating: 4.3, inStock: true, category: "budget", icon: "🇲🇽", reviews: 34},
+
+                        // 🇦🇷 Аргентина
+                        {id: 50, name: "🇦🇷 Argentina +54 | Standard AR", description: "Стандартный номер Аргентины", price: 140, originalPrice: 200, seller: "AR_Standard", rating: 4.4, inStock: true, category: "budget", icon: "🇦🇷", reviews: 45},
+                        {id: 51, name: "🇦🇷 Argentina +54 | Budget AR", description: "Бюджетный номер Аргентины", price: 100, originalPrice: 150, seller: "AR_Budget", rating: 4.2, inStock: true, category: "budget", icon: "🇦🇷", reviews: 23},
+
+                        // 🇹🇷 Турция
+                        {id: 52, name: "🇹🇷 Turkey +90 | Premium TR", description: "Премиум турецкий номер", price: 150, originalPrice: 220, seller: "TR_Premium", rating: 4.6, inStock: true, category: "premium", icon: "🇹🇷", reviews: 134},
+                        {id: 53, name: "🇹🇷 Turkey +90 | Budget TR", description: "Бюджетный номер Турции", price: 95, originalPrice: 140, seller: "TR_Budget", rating: 4.3, inStock: true, category: "budget", icon: "🇹🇷", reviews: 89},
+
+                        // 🇿🇦 Южная Африка
+                        {id: 54, name: "🇿🇦 South Africa +27 | Premium ZA", description: "Премиум номер ЮАР", price: 180, originalPrice: 280, seller: "ZA_Premium", rating: 4.7, inStock: true, category: "premium", icon: "🇿🇦", reviews: 76},
+                        {id: 55, name: "🇿🇦 South Africa +27 | Standard ZA", description: "Стандартный номер ЮАР", price: 140, originalPrice: 200, seller: "ZA_Standard", rating: 4.5, inStock: true, category: "budget", icon: "🇿🇦", reviews: 45},
+
+                        // 🇳🇬 Нигерия
+                        {id: 56, name: "🇳🇬 Nigeria +234 | Premium NG", description: "Премиум номер Нигерии", price: 160, originalPrice: 240, seller: "NG_Premium", rating: 4.6, inStock: true, category: "premium", icon: "🇳🇬", reviews: 67},
+                        {id: 57, name: "🇳🇬 Nigeria +234 | Budget NG", description: "Бюджетный номер Нигерии", price: 105, originalPrice: 155, seller: "NG_Budget", rating: 4.3, inStock: true, category: "budget", icon: "🇳🇬", reviews: 34},
+
+                        // 🇪🇬 Египет
+                        {id: 58, name: "🇪🇬 Egypt +20 | Premium EG", description: "Премиум египетский номер", price: 150, originalPrice: 220, seller: "EG_Premium", rating: 4.5, inStock: true, category: "premium", icon: "🇪🇬", reviews: 89},
+                        {id: 59, name: "🇪🇬 Egypt +20 | Budget EG", description: "Бюджетный номер Египта", price: 100, originalPrice: 150, seller: "EG_Budget", rating: 4.2, inStock: true, category: "budget", icon: "🇪🇬", reviews: 56},
+
+                        // 🇷🇺 Россия
+                        {id: 60, name: "🇷🇺 Russia +7 | Business RU", description: "Бизнес номер России", price: 200, originalPrice: 320, seller: "RU_Business", rating: 4.8, inStock: true, category: "premium", icon: "🇷🇺", reviews: 456},
+                        {id: 61, name: "🇷🇺 Russia +7 | Premium RU", description: "Премиум российский номер", price: 160, originalPrice: 240, seller: "RU_Premium", rating: 4.7, inStock: true, category: "premium", icon: "🇷🇺", reviews: 334},
+                        {id: 62, name: "🇷🇺 Russia +7 | Standard RU", description: "Стандартный номер России", price: 120, originalPrice: 180, seller: "RU_Standard", rating: 4.5, inStock: true, category: "budget", icon: "🇷🇺", reviews: 267},
+                        {id: 63, name: "🇷🇺 Russia +7 | Budget RU", description: "Бюджетный номер России", price: 95, originalPrice: 140, seller: "RU_Budget", rating: 4.3, inStock: true, category: "budget", icon: "🇷🇺", reviews: 189},
+
+                        // 🇺🇦 Украина
+                        {id: 64, name: "🇺🇦 Ukraine +380 | Premium UA", description: "Премиум украинский номер", price: 140, originalPrice: 210, seller: "UA_Premium", rating: 4.7, inStock: true, category: "premium", icon: "🇺🇦", reviews: 189},
+                        {id: 65, name: "🇺🇦 Ukraine +380 | Budget UA", description: "Бюджетный номер Украины", price: 90, originalPrice: 130, seller: "UA_Budget", rating: 4.4, inStock: true, category: "budget", icon: "🇺🇦", reviews: 134}
                     ]);
-                }, 1500);
+                }, 1000);
             });
         }
 
-        // Запасные товары
         function getFallbackProducts() {
             return [{
-                id: 99,
-                name: "🕶️ Basic Telegram Account",
-                description: "Базовый аккаунт для начинающих.",
-                price: 150,
-                originalPrice: 200,
-                seller: "Base_Provider",
-                rating: 4.2,
-                inStock: true,
-                category: "budget",
-                icon: "🕶️",
-                reviews: 45,
-                source: "local"
+                id: 99, name: "🕶️ Basic Account", description: "Базовый аккаунт", price: 110, originalPrice: 200, seller: "Base_Provider", rating: 4.2, inStock: true, category: "basic", icon: "🕶️", reviews: 45
             }];
         }
 
-        // Отображение товаров
         function displayProducts() {
             const productsGrid = document.getElementById('productsGrid');
             const productCount = document.getElementById('productCount');
-
+            
             if (!productsGrid) return;
-
+            
             const filteredProducts = filterProducts(allProducts);
-
+            
             productsGrid.innerHTML = '';
-
+            
             if (filteredProducts.length === 0) {
                 productsGrid.innerHTML = `
                     <div style="grid-column: 1 / -1; text-align: center; color: #ff6666; padding: 40px;">
                         <div style="font-size: 4em; margin-bottom: 20px;">🔍</div>
                         <h3>Товары не найдены</h3>
-                        <p>Измените фильтры или обновите базу</p>
+                        <p>Измените фильтры</p>
                     </div>
                 `;
                 return;
             }
-
+            
             filteredProducts.forEach((product, index) => {
                 const productCard = document.createElement('div');
                 productCard.className = 'product-card';
-                productCard.style.animationDelay = `${index * 0.1}s`;
-
+                
                 productCard.innerHTML = `
                     <div class="product-icon">${product.icon}</div>
                     <h3>${product.name}</h3>
                     <p>${product.description}</p>
-
+                    
                     <div class="product-meta">
                         <div class="seller">👤 ${product.seller}</div>
                         <div class="rating">⭐ ${product.rating} (${product.reviews})</div>
                     </div>
-
+                    
                     <div class="price-section">
-                        <div class="price">${product.price} ₿</div>
-                        ${product.originalPrice > product.price ?
-                            `<div class="original-price">${product.originalPrice} ₿</div>` : ''}
+                        <div class="price">${product.price} ₽</div>
+                        ${product.originalPrice > product.price ? 
+                            `<div class="original-price">${product.originalPrice} ₽</div>` : ''}
                     </div>
-
+                    
                     <div class="stock-status ${product.inStock ? 'in-stock' : 'out-of-stock'}">
-                        ${product.inStock ? '💀 В наличии • Анонимная доставка' : '⚰️ Нет в наличии'}
+                        ${product.inStock ? '💀 В наличии' : '⚰️ Нет в наличии'}
                     </div>
-
+                    
                     <div class="product-source">
-                        <span class="lzt-badge">LZT.MARKET</span>
+                        <span class="lzt-badge">ELITE SHOP</span>
                         <span class="update-time">🕒 ${new Date().toLocaleTimeString()}</span>
                     </div>
-
-                    <button class="btn ${!product.inStock ? 'disabled' : ''}"
+                    
+                    <button class="btn ${!product.inStock ? 'disabled' : ''}" 
                             onclick="addToCart(${product.id})"
                             ${!product.inStock ? 'disabled' : ''}>
                         ${product.inStock ? '💀 Добавить в корзину' : '⚰️ Нет в наличии'}
                     </button>
-
-                    <a href="${product.link}" target="_blank" class="lzt-link">
-                        📋 Открыть на LZT.market
-                    </a>
                 `;
                 productsGrid.appendChild(productCard);
             });
-
+            
             if (productCount) {
                 const inStockCount = filteredProducts.filter(p => p.inStock).length;
                 productCount.textContent = inStockCount;
             }
         }
 
-        // Фильтрация товаров
         function filterProducts(products) {
             switch(currentFilter) {
                 case 'in-stock': return products.filter(p => p.inStock);
-                case 'premium': return products.filter(p => p.category === 'premium');
-                case 'vintage': return products.filter(p => p.category === 'vintage');
-                case 'business': return products.filter(p => p.category === 'business');
-                case 'new': return products.filter(p => p.category === 'new');
-                case 'security': return products.filter(p => p.category === 'security');
-                case 'budget': return products.filter(p => p.category === 'budget');
+                case 'usa': return products.filter(p => p.category.includes('usa'));
+                case 'europe': return products.filter(p => p.category.includes('europe'));
+                case 'asia': return products.filter(p => p.category.includes('asia'));
+                case 'premium': return products.filter(p => p.category.includes('premium'));
+                case 'budget': return products.filter(p => p.category.includes('budget'));
                 default: return products;
             }
         }
 
-        // Смена фильтра
         function setFilter(filter) {
             currentFilter = filter;
             document.querySelectorAll('.filter-btn').forEach(btn => {
@@ -952,7 +694,6 @@
             displayProducts();
         }
 
-        // Добавление в корзину
         function addToCart(productId) {
             const product = allProducts.find(p => p.id === productId);
             if (product && product.inStock) {
@@ -961,14 +702,13 @@
                     cartId: Date.now(),
                     addedAt: new Date().toLocaleTimeString()
                 });
-
-                // Сохраняем в localStorage
+                
                 localStorage.setItem('eliteTelegramCart', JSON.stringify(cartItems));
-
+                
                 updateCartNotification();
                 updateHeaderCartCount();
                 showNotification(`💀 "${product.name}" добавлен в корзину!`, 'success');
-
+                
                 event.target.innerHTML = '💀 Добавлено!';
                 event.target.style.background = 'linear-gradient(45deg, #006400, #008000)';
                 setTimeout(() => {
@@ -978,61 +718,46 @@
             }
         }
 
-        // Обновление корзины
         function updateCartNotification() {
             const notification = document.getElementById('cartNotification');
             const countElement = document.getElementById('cartCount');
             const countDisplay = document.getElementById('cartCountDisplay');
-
+            
             if (countElement) countElement.textContent = cartItems.length;
             if (countDisplay) countDisplay.textContent = cartItems.length;
-
+            
             if (notification) {
                 notification.style.display = 'block';
-                notification.style.animation = 'none';
-                setTimeout(() => {
-                    notification.style.animation = 'bounce 0.5s ease';
-                }, 10);
-
                 setTimeout(() => {
                     notification.style.display = 'none';
-                }, 5000);
+                }, 3000);
             }
         }
 
-        // Уведомления
         function showNotification(message, type = 'info') {
             const notification = document.createElement('div');
             notification.textContent = message;
-
-            const colors = {
-                success: '#00ff00',
-                warning: '#ffcc00',
-                error: '#ff0000',
-                info: '#ff6666'
-            };
-
+            
             notification.style.cssText = `
                 position: fixed;
                 top: 50%;
                 left: 50%;
                 transform: translate(-50%, -50%);
                 background: rgba(0,0,0,0.95);
-                color: ${colors[type]};
+                color: #00ff00;
                 padding: 20px 35px;
                 border-radius: 15px;
                 z-index: 1000;
                 font-size: 1.1em;
-                border: 2px solid ${colors[type]};
-                box-shadow: 0 0 30px ${colors[type]}50;
+                border: 2px solid #00ff00;
                 text-align: center;
                 max-width: 90%;
                 word-wrap: break-word;
                 font-weight: bold;
             `;
-
+            
             document.body.appendChild(notification);
-
+            
             setTimeout(() => {
                 notification.style.opacity = '0';
                 notification.style.transition = 'opacity 0.5s ease';
@@ -1040,27 +765,18 @@
             }, 2000);
         }
 
-        // Индикатор загрузки
         function showLoading(show) {
             const productsGrid = document.getElementById('productsGrid');
             if (show) {
                 productsGrid.innerHTML = `
                     <div class="loading">
                         <div class="loading-spinner"></div>
-                        <p>Загрузка реальных товаров с LZT.market...</p>
+                        <p>Загрузка товаров...</p>
                     </div>
                 `;
             }
         }
 
-        // Авто-обновление
-        function startAutoRefresh() {
-            setInterval(() => {
-                loadLZTProducts();
-            }, 180000); // Каждые 3 минуты
-        }
-
-        // Обновление времени
         function updateTime() {
             const timeElement = document.getElementById('currentTime');
             if (timeElement) {
@@ -1068,23 +784,19 @@
             }
         }
 
-        // Запуск при загрузке страницы
+        // ЗАГРУЗКА БЕЗ УВЕДОМЛЕНИЯ НА ВХОДЕ
         document.addEventListener('DOMContentLoaded', function() {
             loadCartFromStorage();
-            loadLZTProducts();
-            startAutoRefresh();
-
+            loadProducts();
+            
             setInterval(updateTime, 1000);
             updateTime();
-
-            setTimeout(() => {
-                showNotification('💀 Добро пожаловать в ELITE TELEGRAM SHOP!', 'success');
-            }, 1000);
+            
+            // НЕТ УВЕДОМЛЕНИЯ ПРИ ВХОДЕ - САЙТ ЗАГРУЖАЕТСЯ ТИХО
         });
 
         window.addEventListener('error', function(e) {
             console.error('Global error:', e.error);
-            showNotification('⚰️ Произошла ошибка. Обновите страницу.', 'error');
         });
     </script>
 </body>
