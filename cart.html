@@ -1,740 +1,585 @@
-<!-- ВАШ СУЩЕСТВУЮЩИЙ index.html - ЗАМЕНИТЕ ТОЛЬко JavaScript с товарами -->
-
-<script>
-// ОГРОМНАЯ БАЗА ТОВАРОВ ПО 110 РУБЛЕЙ
-function generateMassProducts() {
-    return [
-        // США и Канада
-        {
-            id: 1,
-            name: "🇺🇸 USA +1 | 1 Year Old",
-            description: "Аккаунт США, 1 год, чистый номер",
-            price: 110,
-            originalPrice: 200,
-            seller: "Global_Accounts",
-            rating: 4.8,
-            inStock: true,
-            category: "usa",
-            icon: "🇺🇸",
-            reviews: 342
-        },
-        {
-            id: 2,
-            name: "🇺🇸 USA +1 | Fresh Number",
-            description: "Новый номер США, моментальная активация",
-            price: 110,
-            originalPrice: 200,
-            seller: "US_Provider",
-            rating: 4.7,
-            inStock: true,
-            category: "usa", 
-            icon: "🇺🇸",
-            reviews: 287
-        },
-        {
-            id: 3,
-            name: "🇨🇦 Canada +1 | 6 Months",
-            description: "Канадский номер, 6 месяцев",
-            price: 110,
-            originalPrice: 200,
-            seller: "Canada_Shop",
-            rating: 4.6,
-            inStock: true,
-            category: "canada",
-            icon: "🇨🇦",
-            reviews: 156
-        },
-
-        // Бангладеш
-        {
-            id: 4,
-            name: "🇧🇩 Bangladesh +880 | 3 Months",
-            description: "Бангладеш номер, 3 месяца отлеги",
-            price: 110,
-            originalPrice: 200,
-            seller: "Asia_Accounts",
-            rating: 4.5,
-            inStock: true,
-            category: "bangladesh",
-            icon: "🇧🇩",
-            reviews: 89
-        },
-        {
-            id: 5,
-            name: "🇧🇩 Bangladesh +880 | Fresh",
-            description: "Новый номер Бангладеш",
-            price: 110,
-            originalPrice: 200,
-            seller: "BD_Provider",
-            rating: 4.4,
-            inStock: true,
-            category: "bangladesh",
-            icon: "🇧🇩",
-            reviews: 67
-        },
-
-        // Мьянма
-        {
-            id: 6,
-            name: "🇲🇲 Myanmar +95 | 7 Days",
-            description: "Мьянма номер, 7 дней отлеги",
-            price: 110,
-            originalPrice: 200,
-            seller: "Myanmar_Shop",
-            rating: 4.3,
-            inStock: true,
-            category: "myanmar",
-            icon: "🇲🇲",
-            reviews: 45
-        },
-
-        // Индия
-        {
-            id: 7,
-            name: "🇮🇳 India +91 | New Reg",
-            description: "Новый индийский номер",
-            price: 110,
-            originalPrice: 200,
-            seller: "India_Accounts",
-            rating: 4.7,
-            inStock: true,
-            category: "india",
-            icon: "🇮🇳",
-            reviews: 234
-        },
-        {
-            id: 8,
-            name: "🇮🇳 India +91 | 1 Month",
-            description: "Индийский номер, 1 месяц",
-            price: 110,
-            originalPrice: 200,
-            seller: "IN_Provider",
-            rating: 4.6,
-            inStock: true,
-            category: "india",
-            icon: "🇮🇳",
-            reviews: 178
-        },
-
-        // Украина
-        {
-            id: 9,
-            name: "🇺🇦 Ukraine +380 | New",
-            description: "Новый украинский номер",
-            price: 110,
-            originalPrice: 200,
-            seller: "UA_Accounts",
-            rating: 4.8,
-            inStock: true,
-            category: "ukraine",
-            icon: "🇺🇦",
-            reviews: 189
-        },
-
-        // Россия
-        {
-            id: 10,
-            name: "🇷🇺 Russia +7 | Fresh",
-            description: "Новый российский номер",
-            price: 110,
-            originalPrice: 200,
-            seller: "RU_Provider",
-            rating: 4.9,
-            inStock: true,
-            category: "russia",
-            icon: "🇷🇺",
-            reviews: 456
-        },
-
-        // Беларусь
-        {
-            id: 11,
-            name: "🇧🇾 Belarus +375 | New",
-            description: "Новый белорусский номер",
-            price: 110,
-            originalPrice: 200,
-            seller: "BY_Shop",
-            rating: 4.7,
-            inStock: true,
-            category: "belarus",
-            icon: "🇧🇾",
-            reviews: 123
-        },
-
-        // Финляндия
-        {
-            id: 12,
-            name: "🇫🇮 Finland +358 | EU Number",
-            description: "Финский номер, EU регион",
-            price: 110,
-            originalPrice: 200,
-            seller: "EU_Accounts",
-            rating: 4.6,
-            inStock: true,
-            category: "finland",
-            icon: "🇫🇮",
-            reviews: 98
-        },
-
-        // Китай
-        {
-            id: 13,
-            name: "🇨🇳 China +86 | New",
-            description: "Новый китайский номер",
-            price: 110,
-            originalPrice: 200,
-            seller: "CN_Provider",
-            rating: 4.5,
-            inStock: true,
-            category: "china",
-            icon: "🇨🇳",
-            reviews: 167
-        },
-
-        // Япония
-        {
-            id: 14,
-            name: "🇯🇵 Japan +81 | Fresh",
-            description: "Новый японский номер",
-            price: 110,
-            originalPrice: 200,
-            seller: "JP_Shop",
-            rating: 4.7,
-            inStock: true,
-            category: "japan",
-            icon: "🇯🇵",
-            reviews: 134
-        },
-
-        // Египет
-        {
-            id: 15,
-            name: "🇪🇬 Egypt +20 | New",
-            description: "Новый египетский номер",
-            price: 110,
-            originalPrice: 200,
-            seller: "EG_Accounts",
-            rating: 4.4,
-            inStock: true,
-            category: "egypt",
-            icon: "🇪🇬",
-            reviews: 89
-        },
-
-        // Германия
-        {
-            id: 16,
-            name: "🇩🇪 Germany +49 | EU",
-            description: "Немецкий номер, EU регион",
-            price: 110,
-            originalPrice: 200,
-            seller: "DE_Provider",
-            rating: 4.8,
-            inStock: true,
-            category: "germany",
-            icon: "🇩🇪",
-            reviews: 156
-        },
-
-        // Великобритания
-        {
-            id: 17,
-            name: "🇬🇧 UK +44 | Fresh",
-            description: "Новый британский номер",
-            price: 110,
-            originalPrice: 200,
-            seller: "UK_Shop",
-            rating: 4.7,
-            inStock: true,
-            category: "uk",
-            icon: "🇬🇧",
-            reviews: 145
-        },
-
-        // Франция
-        {
-            id: 18,
-            name: "🇫🇷 France +33 | EU Number",
-            description: "Французский номер, EU",
-            price: 110,
-            originalPrice: 200,
-            seller: "FR_Accounts",
-            rating: 4.6,
-            inStock: true,
-            category: "france",
-            icon: "🇫🇷",
-            reviews: 112
-        },
-
-        // Италия
-        {
-            id: 19,
-            name: "🇮🇹 Italy +39 | New",
-            description: "Новый итальянский номер",
-            price: 110,
-            originalPrice: 200,
-            seller: "IT_Provider",
-            rating: 4.5,
-            inStock: true,
-            category: "italy",
-            icon: "🇮🇹",
-            reviews: 98
-        },
-
-        // Испания
-        {
-            id: 20,
-            name: "🇪🇸 Spain +34 | Fresh",
-            description: "Новый испанский номер",
-            price: 110,
-            originalPrice: 200,
-            seller: "ES_Shop",
-            rating: 4.6,
-            inStock: true,
-            category: "spain",
-            icon: "🇪🇸",
-            reviews: 87
-        },
-
-        // Польша
-        {
-            id: 21,
-            name: "🇵🇱 Poland +48 | EU",
-            description: "Польский номер, EU регион",
-            price: 110,
-            originalPrice: 200,
-            seller: "PL_Accounts",
-            rating: 4.7,
-            inStock: true,
-            category: "poland",
-            icon: "🇵🇱",
-            reviews: 76
-        },
-
-        // Турция
-        {
-            id: 22,
-            name: "🇹🇷 Turkey +90 | New",
-            description: "Новый турецкий номер",
-            price: 110,
-            originalPrice: 200,
-            seller: "TR_Provider",
-            rating: 4.5,
-            inStock: true,
-            category: "turkey",
-            icon: "🇹🇷",
-            reviews: 134
-        },
-
-        // Бразилия
-        {
-            id: 23,
-            name: "🇧🇷 Brazil +55 | Fresh",
-            description: "Новый бразильский номер",
-            price: 110,
-            originalPrice: 200,
-            seller: "BR_Shop",
-            rating: 4.4,
-            inStock: true,
-            category: "brazil",
-            icon: "🇧🇷",
-            reviews: 89
-        },
-
-        // Мексика
-        {
-            id: 24,
-            name: "🇲🇽 Mexico +52 | New",
-            description: "Новый мексиканский номер",
-            price: 110,
-            originalPrice: 200,
-            seller: "MX_Accounts",
-            rating: 4.3,
-            inStock: true,
-            category: "mexico",
-            icon: "🇲🇽",
-            reviews: 67
-        },
-
-        // Южная Корея
-        {
-            id: 25,
-            name: "🇰🇷 Korea +82 | Fresh",
-            description: "Новый корейский номер",
-            price: 110,
-            originalPrice: 200,
-            seller: "KR_Provider",
-            rating: 4.6,
-            inStock: true,
-            category: "korea",
-            icon: "🇰🇷",
-            reviews: 78
-        },
-
-        // Вьетнам
-        {
-            id: 26,
-            name: "🇻🇳 Vietnam +84 | New",
-            description: "Новый вьетнамский номер",
-            price: 110,
-            originalPrice: 200,
-            seller: "VN_Shop",
-            rating: 4.4,
-            inStock: true,
-            category: "vietnam",
-            icon: "🇻🇳",
-            reviews: 56
-        },
-
-        // Таиланд
-        {
-            id: 27,
-            name: "🇹🇭 Thailand +66 | Fresh",
-            description: "Новый тайский номер",
-            price: 110,
-            originalPrice: 200,
-            seller: "TH_Accounts",
-            rating: 4.5,
-            inStock: true,
-            category: "thailand",
-            icon: "🇹🇭",
-            reviews: 45
-        },
-
-        // Индонезия
-        {
-            id: 28,
-            name: "🇮🇩 Indonesia +62 | New",
-            description: "Новый индонезийский номер",
-            price: 110,
-            originalPrice: 200,
-            seller: "ID_Provider",
-            rating: 4.4,
-            inStock: true,
-            category: "indonesia",
-            icon: "🇮🇩",
-            reviews: 34
-        },
-
-        // Малайзия
-        {
-            id: 29,
-            name: "🇲🇾 Malaysia +60 | Fresh",
-            description: "Новый малайзийский номер",
-            price: 110,
-            originalPrice: 200,
-            seller: "MY_Shop",
-            rating: 4.3,
-            inStock: true,
-            category: "malaysia",
-            icon: "🇲🇾",
-            reviews: 23
-        },
-
-        // Филиппины
-        {
-            id: 30,
-            name: "🇵🇭 Philippines +63 | New",
-            description: "Новый филиппинский номер",
-            price: 110,
-            originalPrice: 200,
-            seller: "PH_Accounts",
-            rating: 4.4,
-            inStock: true,
-            category: "philippines",
-            icon: "🇵🇭",
-            reviews: 67
-        },
-
-        // И еще 20+ стран...
-        {
-            id: 31,
-            name: "🇸🇦 Saudi Arabia +966 | New",
-            description: "Новый саудовский номер",
-            price: 110,
-            originalPrice: 200,
-            seller: "SA_Provider",
-            rating: 4.2,
-            inStock: true,
-            category: "saudi",
-            icon: "🇸🇦",
-            reviews: 45
-        },
-
-        {
-            id: 32,
-            name: "🇦🇪 UAE +971 | Fresh",
-            description: "Новый номер ОАЭ",
-            price: 110,
-            originalPrice: 200,
-            seller: "AE_Shop",
-            rating: 4.5,
-            inStock: true,
-            category: "uae",
-            icon: "🇦🇪",
-            reviews: 89
-        },
-
-        {
-            id: 33,
-            name: "🇿🇦 South Africa +27 | New",
-            description: "Новый южноафриканский номер",
-            price: 110,
-            originalPrice: 200,
-            seller: "ZA_Accounts",
-            rating: 4.3,
-            inStock: true,
-            category: "south-africa",
-            icon: "🇿🇦",
-            reviews: 34
-        },
-
-        {
-            id: 34,
-            name: "🇳🇬 Nigeria +234 | Fresh",
-            description: "Новый нигерийский номер",
-            price: 110,
-            originalPrice: 200,
-            seller: "NG_Provider",
-            rating: 4.2,
-            inStock: true,
-            category: "nigeria",
-            icon: "🇳🇬",
-            reviews: 56
-        },
-
-        {
-            id: 35,
-            name: "🇦🇷 Argentina +54 | New",
-            description: "Новый аргентинский номер",
-            price: 110,
-            originalPrice: 200,
-            seller: "AR_Shop",
-            rating: 4.4,
-            inStock: true,
-            category: "argentina",
-            icon: "🇦🇷",
-            reviews: 78
-        },
-
-        {
-            id: 36,
-            name: "🇨🇱 Chile +56 | Fresh",
-            description: "Новый чилийский номер",
-            price: 110,
-            originalPrice: 200,
-            seller: "CL_Accounts",
-            rating: 4.3,
-            inStock: true,
-            category: "chile",
-            icon: "🇨🇱",
-            reviews: 45
-        },
-
-        {
-            id: 37,
-            name: "🇵🇪 Peru +51 | New",
-            description: "Новый перуанский номер",
-            price: 110,
-            originalPrice: 200,
-            seller: "PE_Provider",
-            rating: 4.2,
-            inStock: true,
-            category: "peru",
-            icon: "🇵🇪",
-            reviews: 23
-        },
-
-        {
-            id: 38,
-            name: "🇨🇴 Colombia +57 | Fresh",
-            description: "Новый колумбийский номер",
-            price: 110,
-            originalPrice: 200,
-            seller: "CO_Shop",
-            rating: 4.3,
-            inStock: true,
-            category: "colombia",
-            icon: "🇨🇴",
-            reviews: 34
-        },
-
-        {
-            id: 39,
-            name: "🇻🇪 Venezuela +58 | New",
-            description: "Новый венесуэльский номер",
-            price: 110,
-            originalPrice: 200,
-            seller: "VE_Accounts",
-            rating: 4.1,
-            inStock: true,
-            category: "venezuela",
-            icon: "🇻🇪",
-            reviews: 12
-        },
-
-        {
-            id: 40,
-            name: "🇵🇰 Pakistan +92 | Fresh",
-            description: "Новый пакистанский номер",
-            price: 110,
-            originalPrice: 200,
-            seller: "PK_Provider",
-            rating: 4.4,
-            inStock: true,
-            category: "pakistan",
-            icon: "🇵🇰",
-            reviews: 67
-        },
-
-        {
-            id: 41,
-            name: "🇧🇩 Bangladesh +880 | 1 Month",
-            description: "Бангладеш номер, 1 месяц",
-            price: 110,
-            originalPrice: 200,
-            seller: "BD_Shop2",
-            rating: 4.5,
-            inStock: true,
-            category: "bangladesh",
-            icon: "🇧🇩",
-            reviews: 89
-        },
-
-        {
-            id: 42,
-            name: "🇮🇳 India +91 | 2 Weeks",
-            description: "Индийский номер, 2 недели",
-            price: 110,
-            originalPrice: 200,
-            seller: "IN_Shop2",
-            rating: 4.6,
-            inStock: true,
-            category: "india",
-            icon: "🇮🇳",
-            reviews: 145
-        },
-
-        {
-            id: 43,
-            name: "🇺🇸 USA +1 | 2 Months",
-            description: "Аккаунт США, 2 месяца",
-            price: 110,
-            originalPrice: 200,
-            seller: "US_Shop2",
-            rating: 4.7,
-            inStock: true,
-            category: "usa",
-            icon: "🇺🇸",
-            reviews: 234
-        },
-
-        {
-            id: 44,
-            name: "🇷🇺 Russia +7 | 1 Month",
-            description: "Российский номер, 1 месяц",
-            price: 110,
-            originalPrice: 200,
-            seller: "RU_Shop2",
-            rating: 4.8,
-            inStock: true,
-            category: "russia",
-            icon: "🇷🇺",
-            reviews: 189
-        },
-
-        {
-            id: 45,
-            name: "🇺🇦 Ukraine +380 | 3 Weeks",
-            description: "Украинский номер, 3 недели",
-            price: 110,
-            originalPrice: 200,
-            seller: "UA_Shop2",
-            rating: 4.7,
-            inStock: true,
-            category: "ukraine",
-            icon: "🇺🇦",
-            reviews: 156
-        },
-
-        {
-            id: 46,
-            name: "🇩🇪 Germany +49 | 1 Month",
-            description: "Немецкий номер, 1 месяц",
-            price: 110,
-            originalPrice: 200,
-            seller: "DE_Shop2",
-            rating: 4.6,
-            inStock: true,
-            category: "germany",
-            icon: "🇩🇪",
-            reviews: 134
-        },
-
-        {
-            id: 47,
-            name: "🇬🇧 UK +44 | 2 Weeks",
-            description: "Британский номер, 2 недели",
-            price: 110,
-            originalPrice: 200,
-            seller: "UK_Shop2",
-            rating: 4.7,
-            inStock: true,
-            category: "uk",
-            icon: "🇬🇧",
-            reviews: 167
-        },
-
-        {
-            id: 48,
-            name: "🇫🇷 France +33 | 1 Month",
-            description: "Французский номер, 1 месяц",
-            price: 110,
-            originalPrice: 200,
-            seller: "FR_Shop2",
-            rating: 4.5,
-            inStock: true,
-            category: "france",
-            icon: "🇫🇷",
-            reviews: 98
-        },
-
-        {
-            id: 49,
-            name: "🇨🇳 China +86 | 3 Weeks",
-            description: "Китайский номер, 3 недели",
-            price: 110,
-            originalPrice: 200,
-            seller: "CN_Shop2",
-            rating: 4.4,
-            inStock: true,
-            category: "china",
-            icon: "🇨🇳",
-            reviews: 112
-        },
-
-        {
-            id: 50,
-            name: "🇯🇵 Japan +81 | 2 Weeks",
-            description: "Японский номер, 2 недели",
-            price: 110,
-            originalPrice: 200,
-            seller: "JP_Shop2",
-            rating: 4.6,
-            inStock: true,
-            category: "japan",
-            icon: "🇯🇵",
-            reviews: 89
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🛒 Корзина - ELITE TELEGRAM SHOP</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
-    ];
-}
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            background: #000000;
+            color: #ffffff;
+            min-height: 100vh;
+            padding: 0;
+        }
 
-// Заменяем функцию loadRealLZTProducts()
-async function loadRealLZTProducts() {
-    return new Promise((resolve) => {
-        setTimeout(() => {
-            resolve(generateMassProducts());
-        }, 1000);
-    });
-}
-</script>
+        .bg-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(255, 0, 0, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(139, 0, 0, 0.1) 0%, transparent 50%);
+            z-index: -1;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 50px 20px;
+            background: linear-gradient(135deg, rgba(0,0,0,0.9) 0%, rgba(139,0,0,0.7) 100%);
+            border-radius: 15px;
+            border: 1px solid #8b0000;
+        }
+
+        .header h1 {
+            font-size: 3.5em;
+            margin-bottom: 15px;
+            background: linear-gradient(45deg, #ff0000, #8b0000);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .header p {
+            font-size: 1.3em;
+            color: #ccc;
+            margin-bottom: 10px;
+        }
+        
+        .back-link {
+            display: inline-block;
+            background: linear-gradient(45deg, #8b0000, #ff0000);
+            color: #000;
+            padding: 12px 25px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .back-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255,0,0,0.3);
+        }
+        
+        .cart-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+        
+        .cart-items {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 30px;
+            border-radius: 15px;
+            border: 1px solid #8b0000;
+        }
+        
+        .cart-summary {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 30px;
+            border-radius: 15px;
+            border: 1px solid #8b0000;
+            height: fit-content;
+        }
+        
+        .empty-cart {
+            text-align: center;
+            padding: 60px 20px;
+            color: #ff6666;
+        }
+        
+        .empty-cart-icon {
+            font-size: 6em;
+            margin-bottom: 20px;
+        }
+        
+        .cart-item {
+            display: flex;
+            align-items: center;
+            padding: 20px;
+            background: linear-gradient(135deg, rgba(0,0,0,0.9) 0%, rgba(139,0,0,0.2) 100%);
+            border-radius: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #8b0000;
+            transition: all 0.3s ease;
+        }
+        
+        .cart-item:hover {
+            border: 1px solid #ff0000;
+            transform: translateX(5px);
+        }
+        
+        .cart-item-icon {
+            font-size: 3em;
+            margin-right: 20px;
+            min-width: 60px;
+        }
+        
+        .cart-item-info {
+            flex-grow: 1;
+        }
+        
+        .cart-item-name {
+            font-size: 1.3em;
+            color: #ffcccb;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+        
+        .cart-item-meta {
+            display: flex;
+            gap: 15px;
+            color: #aaa;
+            font-size: 0.9em;
+            margin-bottom: 8px;
+        }
+        
+        .cart-item-price {
+            font-size: 1.4em;
+            color: #ff4444;
+            font-weight: bold;
+        }
+        
+        .remove-btn {
+            background: linear-gradient(45deg, #8b0000, #ff0000);
+            color: #000;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+        
+        .remove-btn:hover {
+            transform: scale(1.05);
+        }
+        
+        .summary-title {
+            font-size: 1.8em;
+            color: #ffcccb;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .summary-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            padding: 10px 0;
+            border-bottom: 1px solid #333;
+        }
+        
+        .summary-total {
+            display: flex;
+            justify-content: space-between;
+            font-size: 1.4em;
+            font-weight: bold;
+            color: #ff4444;
+            margin: 25px 0;
+            padding-top: 15px;
+            border-top: 2px solid #8b0000;
+        }
+        
+        .checkout-btn {
+            background: linear-gradient(45deg, #8b0000, #ff0000);
+            color: #000;
+            border: none;
+            padding: 18px;
+            border-radius: 10px;
+            font-size: 1.2em;
+            cursor: pointer;
+            width: 100%;
+            transition: all 0.3s ease;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+        
+        .checkout-btn:hover {
+            transform: scale(1.02);
+        }
+        
+        .checkout-btn:disabled {
+            background: #333;
+            color: #666;
+            cursor: not-allowed;
+            transform: none;
+        }
+        
+        .payment-methods {
+            margin: 25px 0;
+        }
+        
+        .payment-title {
+            color: #ffcccb;
+            margin-bottom: 15px;
+            font-size: 1.1em;
+        }
+        
+        .crypto-wallet {
+            background: rgba(139, 0, 0, 0.3);
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid #8b0000;
+            margin-bottom: 15px;
+            word-break: break-all;
+        }
+        
+        .wallet-address {
+            font-family: monospace;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 12px;
+            border-radius: 5px;
+            margin: 10px 0;
+            border: 1px solid #333;
+            font-size: 0.9em;
+        }
+        
+        .copy-btn {
+            background: linear-gradient(45deg, #8b0000, #ff0000);
+            color: #000;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            width: 100%;
+            transition: all 0.3s ease;
+        }
+        
+        .copy-btn:hover {
+            transform: scale(1.02);
+        }
+        
+        .instructions {
+            background: rgba(139, 0, 0, 0.2);
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid #8b0000;
+            margin-top: 20px;
+            font-size: 0.9em;
+        }
+        
+        .instructions ol {
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+        
+        .instructions li {
+            margin-bottom: 8px;
+            line-height: 1.4;
+        }
+        
+        .footer {
+            text-align: center;
+            color: #ccc;
+            margin-top: 50px;
+            padding: 30px;
+            background: rgba(0, 0, 0, 0.8);
+            border-radius: 15px;
+            border: 1px solid #8b0000;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .footer-link {
+            color: #ff6666;
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 15px;
+            background: rgba(139, 0, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .footer-link:hover {
+            background: rgba(255, 0, 0, 0.3);
+        }
+        
+        .notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: linear-gradient(45deg, #8b0000, #ff0000);
+            color: #000;
+            padding: 16px 28px;
+            border-radius: 25px;
+            font-weight: bold;
+            z-index: 1000;
+            display: none;
+        }
+        
+        @media (max-width: 968px) {
+            .cart-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .cart-item {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .cart-item-icon {
+                margin-right: 0;
+                margin-bottom: 15px;
+            }
+            
+            .header h1 {
+                font-size: 2.5em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-animation"></div>
+
+    <div class="container">
+        <div class="header">
+            <h1>🛒 КОРЗИНА ПОКУПОК</h1>
+            <p>ELITE TELEGRAM SHOP • Все номера по 110₽ • Моментальная доставка</p>
+            
+            <a href="index.html" class="back-link">
+                ⚡ Вернуться в магазин
+            </a>
+        </div>
+
+        <div class="cart-content">
+            <div class="cart-items" id="cartItems">
+                <div class="empty-cart">
+                    <div class="empty-cart-icon">🛒</div>
+                    <h3>Корзина пуста</h3>
+                    <p>Добавьте товары из магазина</p>
+                </div>
+            </div>
+            
+            <div class="cart-summary">
+                <h2 class="summary-title">💀 Оформление заказа</h2>
+                
+                <div class="summary-item">
+                    <span>Товары:</span>
+                    <span id="itemsCount">0</span>
+                </div>
+                
+                <div class="summary-item">
+                    <span>Стоимость:</span>
+                    <span id="subtotal">0 ₽</span>
+                </div>
+                
+                <div class="summary-total">
+                    <span>ИТОГО:</span>
+                    <span id="total">0 ₽</span>
+                </div>
+                
+                <button class="checkout-btn" id="checkoutBtn" disabled>
+                    💀 ПЕРЕЙТИ К ОПЛАТЕ
+                </button>
+                
+                <div class="payment-methods">
+                    <div class="payment-title">💳 Способ оплаты:</div>
+                    
+                    <div class="crypto-wallet">
+                        <strong>TON Coin (Telegram Open Network)</strong>
+                        <div class="wallet-address" id="walletAddress">
+                            UQBYFdivQebVdF1Q2moiL42d_zPtjXrMiuj9HmmzCPTuZy8m
+                        </div>
+                        <button class="copy-btn" onclick="copyWalletAddress()">
+                            📋 Скопировать адрес
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="instructions">
+                    <strong>📋 Инструкция по оплате:</strong>
+                    <ol>
+                        <li>Скопируйте адрес кошелька выше</li>
+                        <li>Отправьте точную сумму <strong id="paymentAmount">0</strong> TON</li>
+                        <li>После оплаты напишите в поддержку с хешем транзакции</li>
+                        <li>Получите товар моментально после подтверждения платежа</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>© 2024 ELITE TELEGRAM SHOP. Все номера по 110₽</p>
+            <p>Моментальная доставка • Гарантия качества • Поддержка 24/7</p>
+            
+            <div class="footer-links">
+                <a href="index.html" class="footer-link">⚡ Магазин</a>
+                <a href="https://t.me/awoeg" target="_blank" class="footer-link">📞 Поддержка</a>
+                <a href="https://discord.gg/arestt" target="_blank" class="footer-link">🎮 Discord</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="notification" id="notification">
+        📋 Скопировано в буфер обмена!
+    </div>
+
+    <script>
+        let cartItems = [];
+        const walletAddress = "UQBYFdivQebVdF1Q2moiL42d_zPtjXrMiuj9HmmzCPTuZy8m";
+        const tonRate = 280; // Примерный курс TON к рублю
+
+        function loadCartFromStorage() {
+            const savedCart = localStorage.getItem('eliteTelegramCart');
+            if (savedCart) {
+                cartItems = JSON.parse(savedCart);
+                displayCartItems();
+                updateSummary();
+            }
+        }
+
+        function displayCartItems() {
+            const cartItemsContainer = document.getElementById('cartItems');
+            
+            if (cartItems.length === 0) {
+                cartItemsContainer.innerHTML = `
+                    <div class="empty-cart">
+                        <div class="empty-cart-icon">🛒</div>
+                        <h3>Корзина пуста</h3>
+                        <p>Добавьте товары из магазина</p>
+                    </div>
+                `;
+                return;
+            }
+            
+            cartItemsContainer.innerHTML = '';
+            
+            cartItems.forEach((item, index) => {
+                const cartItem = document.createElement('div');
+                cartItem.className = 'cart-item';
+                
+                cartItem.innerHTML = `
+                    <div class="cart-item-icon">${item.icon}</div>
+                    <div class="cart-item-info">
+                        <div class="cart-item-name">${item.name}</div>
+                        <div class="cart-item-meta">
+                            <span>👤 ${item.seller}</span>
+                            <span>⭐ ${item.rating}</span>
+                            <span>🕒 ${item.addedAt}</span>
+                        </div>
+                        <div class="cart-item-price">${item.price} ₽</div>
+                    </div>
+                    <button class="remove-btn" onclick="removeFromCart(${item.cartId})">
+                        ❌ Удалить
+                    </button>
+                `;
+                
+                cartItemsContainer.appendChild(cartItem);
+            });
+        }
+
+        function updateSummary() {
+            const itemsCount = document.getElementById('itemsCount');
+            const subtotal = document.getElementById('subtotal');
+            const total = document.getElementById('total');
+            const paymentAmount = document.getElementById('paymentAmount');
+            const checkoutBtn = document.getElementById('checkoutBtn');
+            
+            const totalPrice = cartItems.reduce((sum, item) => sum + item.price, 0);
+            const tonAmount = (totalPrice / tonRate).toFixed(4);
+            
+            if (itemsCount) itemsCount.textContent = cartItems.length;
+            if (subtotal) subtotal.textContent = totalPrice + ' ₽';
+            if (total) total.textContent = totalPrice + ' ₽';
+            if (paymentAmount) paymentAmount.textContent = tonAmount;
+            
+            if (checkoutBtn) {
+                checkoutBtn.disabled = cartItems.length === 0;
+            }
+        }
+
+        function removeFromCart(cartId) {
+            cartItems = cartItems.filter(item => item.cartId !== cartId);
+            localStorage.setItem('eliteTelegramCart', JSON.stringify(cartItems));
+            displayCartItems();
+            updateSummary();
+            showNotification('💀 Товар удален из корзины');
+        }
+
+        function copyWalletAddress() {
+            navigator.clipboard.writeText(walletAddress).then(() => {
+                showNotification('📋 Адрес кошелька скопирован!');
+            }).catch(err => {
+                console.error('Ошибка копирования: ', err);
+                // Fallback для старых браузеров
+                const textArea = document.createElement('textarea');
+                textArea.value = walletAddress;
+                document.body.appendChild(textArea);
+                textArea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textArea);
+                showNotification('📋 Адрес кошелька скопирован!');
+            });
+        }
+
+        function showNotification(message) {
+            const notification = document.getElementById('notification');
+            if (notification) {
+                notification.textContent = message;
+                notification.style.display = 'block';
+                setTimeout(() => {
+                    notification.style.display = 'none';
+                }, 3000);
+            }
+        }
+
+        function proceedToCheckout() {
+            if (cartItems.length === 0) {
+                showNotification('💀 Добавьте товары в корзину');
+                return;
+            }
+            
+            const totalPrice = cartItems.reduce((sum, item) => sum + item.price, 0);
+            const tonAmount = (totalPrice / tonRate).toFixed(4);
+            
+            showNotification(`💀 Переведите ${tonAmount} TON на указанный кошелек`);
+            
+            // Прокрутка к разделу оплаты
+            document.querySelector('.payment-methods').scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+
+        // ЗАГРУЗКА БЕЗ УВЕДОМЛЕНИЯ НА ВХОДЕ
+        document.addEventListener('DOMContentLoaded', function() {
+            loadCartFromStorage();
+            
+            // Назначаем обработчик для кнопки оформления заказа
+            const checkoutBtn = document.getElementById('checkoutBtn');
+            if (checkoutBtn) {
+                checkoutBtn.addEventListener('click', proceedToCheckout);
+            }
+            
+            // НЕТ УВЕДОМЛЕНИЯ ПРИ ВХОДЕ - СТРАНИЦА ЗАГРУЖАЕТСЯ ТИХО
+        });
+
+        window.addEventListener('error', function(e) {
+            console.error('Global error:', e.error);
+        });
+    </script>
+</body>
+</html>
