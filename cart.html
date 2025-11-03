@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🛒 Корзина - ELITE TELEGRAM SHOP</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            background: #000000;
+            color: #ffffff;
+            min-height: 100vh;
+            padding: 0;
+        }
+
+        .bg-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(255, 0, 0, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(139, 0, 0, 0.1) 0%, transparent 50%);
+            z-index: -1;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, rgba(0,0,0,0.9) 0%, rgba(139,0,0,0.7) 100%);
+            border-radius: 15px;
+            border: 1px solid #8b0000;
+        }
+
+        .header h1 {
+            font-size: 3em;
+            margin-bottom: 15px;
+            background: linear-gradient(45deg, #ff0000, #8b0000);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .back-btn {
+            display: inline-block;
+            background: linear-gradient(45deg, #8b0000, #ff0000);
+            color: #000;
+            padding: 12px 25px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .back-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255,0,0,0.3);
+        }
+
+        /* Стили для корзины */
+        .cart-container {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        @media (max-width: 768px) {
+            .cart-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .cart-items {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 25px;
+            border-radius: 15px;
+            border: 1px solid #8b0000;
+        }
+
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            border-bottom: 1px solid #333;
+            transition: all 0.3s ease;
+        }
+
+        .cart-item:hover {
+            background: rgba(139, 0, 0, 0.1);
+        }
+
+        .cart-item:last-child {
+            border-bottom: none;
+        }
+
+        .item-info h3 {
+            color: #ffcccb;
+            margin-bottom: 5px;
+        }
+
+        .item-info p {
+            color: #aaa;
+            font-size: 0.9em;
+        }
+
+        .item-price {
+            font-size: 1.3em;
+            color: #ff4444;
+            font-weight: bold;
+        }
+
+        .remove-btn {
+            background: #8b0000;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .remove-btn:hover {
+            background: #ff0000;
+            transform: scale(1.05);
+        }
+
+        .empty-cart {
+            text-align: center;
+            padding: 60px 20px;
+            color: #666;
+        }
+
+        .empty-cart .icon {
+            font-size: 4em;
+            margin-bottom: 20px;
+        }
+
+        /* Стили для формы заказа */
+        .order-summary {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 25px;
+            border-radius: 15px;
+            border: 1px solid #8b0000;
+            position: sticky;
+            top: 20px;
+        }
+
+        .summary-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #333;
+        }
+
+        .total {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #ff4444;
+            margin: 20px 0;
+            padding-top: 15px;
+            border-top: 2px solid #8b0000;
+        }
+
+        .order-form {
+            margin-top: 25px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #ffcccb;
+            font-weight: 500;
+        }
+
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            background: rgba(139, 0, 0, 0.2);
+            border: 1px solid #8b0000;
+            border-radius: 8px;
+            color: white;
+            font-size: 1em;
+        }
+
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+            outline: none;
+            border-color: #ff0000;
+            box-shadow: 0 0 10px rgba(255,0,0,0.3);
+        }
+
+        .submit-btn {
+            width: 100%;
+            background: linear-gradient(45deg, #8b0000, #ff0000);
+            color: #000;
+            border: none;
+            padding: 16px;
+            border-radius: 10px;
+            font-size: 1.2em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(255,0,0,0.4);
+        }
+
+        .submit-btn:disabled {
+            background: #333;
+            color: #666;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+
+        .payment-methods {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin: 15px 0;
+        }
+
+        .payment-method {
+            background: rgba(139, 0, 0, 0.3);
+            border: 1px solid #8b0000;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .payment-method.selected {
+            background: rgba(255, 0, 0, 0.3);
+            border-color: #ff0000;
+            box-shadow: 0 0 10px rgba(255,0,0,0.3);
+        }
+
+        .payment-method:hover {
+            background: rgba(255, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-animation"></div>
+
+    <div class="container">
+        <div class="header">
+            <h1>🛒 Ваша Корзина</h1>
+            <p>Проверьте товары и оформите заказ</p>
+            <a href="index.html" class="back-btn">← Назад к товарам</a>
+        </div>
+
+        <div class="cart-container">
+            <!-- Левая колонка - товары в корзине -->
+            <div class="cart-items" id="cartItems">
+                <!-- Товары будут загружаться через JavaScript -->
+                <div class="empty-cart">
+                    <div class="icon">😔</div>
+                    <h3>Корзина пуста</h3>
+                    <p>Добавьте товары из каталога</p>
+                    <a href="index.html" class="back-btn" style="margin-top: 20px;">Перейти к товарам</a>
+                </div>
+            </div>
+
+            <!-- Правая колонка - итоги и форма -->
+            <div class="order-summary">
+                <h3 style="color: #ffcccb; margin-bottom: 20px;">💀 Детали заказа</h3>
+                
+                <div class="summary-item">
+                    <span>Товары:</span>
+                    <span id="itemsCount">0</span>
+                </div>
+                <div class="summary-item">
+                    <span>Общая стоимость:</span>
+                    <span id="subtotal">0 ₿</span>
+                </div>
+                <div class="summary-item">
+                    <span>Комиссия (5%):</span>
+                    <span id="fee">0 ₿</span>
+                </div>
+                <div class="total">
+                    <span>Итого к оплате:</span>
+                    <span id="total">0 ₿</span>
+                </div>
+
+                <div class="order-form">
+                    <h4 style="color: #ffcccb; margin-bottom: 15px;">👤 Данные для связи</h4>
+                    
+                    <div class="form-group">
+                        <label for="telegram">Telegram @username</label>
+                        <input type="text" id="telegram" placeholder="@yourusername" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email (для чека)</label>
+                        <input type="email" id="email" placeholder="your@email.com">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="comment">Комментарий к заказу</label>
+                        <textarea id="comment" rows="3" placeholder="Дополнительные пожелания..."></textarea>
+                    </div>
+
+                    <h4 style="color: #ffcccb; margin: 20px 0 15px 0;">💳 Способ оплаты</h4>
+                    <div class="payment-methods">
+                        <div class="payment-method" onclick="selectPayment('crypto')">
+                            <div style="font-size: 1.5em;">₿</div>
+                            <div>Крипта</div>
+                        </div>
+                        <div class="payment-method" onclick="selectPayment('yoomoney')">
+                            <div style="font-size: 1.5em;">💎</div>
+                            <div>ЮMoney</div>
+                        </div>
+                        <div class="payment-method" onclick="selectPayment('qiwi')">
+                            <div style="font-size: 1.5em;">🥝</div>
+                            <div>Qiwi</div>
+                        </div>
+                    </div>
+
+                    <button class="submit-btn" onclick="placeOrder()" id="orderBtn" disabled>
+                        💀 Оформить заказ
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let cart = [];
+        let selectedPayment = '';
+
+        // Загрузка корзины из localStorage
+        function loadCart() {
+            const savedCart = localStorage.getItem('eliteTelegramCart');
+            if (savedCart) {
+                cart = JSON.parse(savedCart);
+                displayCartItems();
+                updateOrderSummary();
+            }
+        }
+
+        // Отображение товаров в корзине
+        function displayCartItems() {
+            const cartItems = document.getElementById('cartItems');
+            
+            if (cart.length === 0) {
+                cartItems.innerHTML = `
+                    <div class="empty-cart">
+                        <div class="icon">😔</div>
+                        <h3>Корзина пуста</h3>
+                        <p>Добавьте товары из каталога</p>
+                        <a href="index.html" class="back-btn" style="margin-top: 20px;">Перейти к товарам</a>
+                    </div>
+                `;
+                return;
+            }
+
+            cartItems.innerHTML = cart.map(item => `
+                <div class="cart-item">
+                    <div class="item-info">
+                        <h3>${item.name}</h3>
+                        <p>Продавец: ${item.seller} • Рейтинг: ⭐ ${item.rating}</p>
+                    </div>
+                    <div class="item-price">${item.price} ₿</div>
+                    <button class="remove-btn" onclick="removeFromCart(${item.cartId})">🗑️</button>
+                </div>
+            `).join('');
+        }
+
+        // Удаление товара из корзины
+        function removeFromCart(cartId) {
+            cart = cart.filter(item => item.cartId !== cartId);
+            saveCart();
+            displayCartItems();
+            updateOrderSummary();
+        }
+
+        // Обновление итогов
+        function updateOrderSummary() {
+            const itemsCount = document.getElementById('itemsCount');
+            const subtotal = document.getElementById('subtotal');
+            const fee = document.getElementById('fee');
+            const total = document.getElementById('total');
+            const orderBtn = document.getElementById('orderBtn');
+
+            const itemsTotal = cart.length;
+            const priceTotal = cart.reduce((sum, item) => sum + item.price, 0);
+            const commission = priceTotal * 0.05;
+            const totalPrice = priceTotal + commission;
+
+            itemsCount.textContent = itemsTotal;
+            subtotal.textContent = priceTotal + ' ₿';
+            fee.textContent = commission.toFixed(2) + ' ₿';
+            total.textContent = totalPrice.toFixed(2) + ' ₿';
+
+            // Активируем кнопку если есть товары и выбран способ оплаты
+            orderBtn.disabled = !(cart.length > 0 && selectedPayment);
+        }
+
+        // Выбор способа оплаты
+        function selectPayment(method) {
+            selectedPayment = method;
+            document.querySelectorAll('.payment-method').forEach(el => {
+                el.classList.remove('selected');
+            });
+            event.target.closest('.payment-method').classList.add('selected');
+            updateOrderSummary();
+        }
+
+        // Оформление заказа
+        function placeOrder() {
+            const telegram = document.getElementById('telegram').value;
+            const email = document.getElementById('email').value;
+            const comment = document.getElementById('comment').value;
+
+            if (!telegram) {
+                alert('⚠️ Введите ваш Telegram username');
+                return;
+            }
+
+            if (!selectedPayment) {
+                alert('⚠️ Выберите способ оплаты');
+                return;
+            }
+
+            const orderData = {
+                items: cart,
+                customer: { telegram, email, comment },
+                payment: selectedPayment,
+                total: cart.reduce((sum, item) => sum + item.price, 0) * 1.05,
+                date: new Date().toISOString(),
+                orderId: 'ELITE-' + Date.now()
+            };
+
+            // Сохраняем заказ
+            localStorage.setItem('lastOrder', JSON.stringify(orderData));
+            
+            // Очищаем корзину
+            cart = [];
+            saveCart();
+
+            // Показываем подтверждение
+            alert(`✅ Заказ #${orderData.orderId} оформлен!\n\nС вами свяжутся в Telegram: @${telegram}\n\nСпособы оплаты будут отправлены в личные сообщения.`);
+            
+            // Перенаправляем на главную
+            window.location.href = 'index.html';
+        }
+
+        // Сохранение корзины
+        function saveCart() {
+            localStorage.setItem('eliteTelegramCart', JSON.stringify(cart));
+        }
+
+        // Загрузка при старте
+        document.addEventListener('DOMContentLoaded', function() {
+            loadCart();
+        });
+    </script>
+</body>
+</html>
