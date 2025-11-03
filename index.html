@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>⚡ ELITE Telegram Shop | Черный рынок премиум аккаунтов</title>
+    <title>⚡ ELITE TELEGRAM SHOP | Черный рынок премиум аккаунтов</title>
     <style>
         * {
             margin: 0;
@@ -96,6 +96,24 @@
             font-weight: 500;
             color: #ffcccb;
             box-shadow: 0 0 15px rgba(255,0,0,0.2);
+        }
+
+        .cart-link {
+            display: inline-block;
+            background: linear-gradient(45deg, #8b0000, #ff0000);
+            color: #000;
+            padding: 12px 25px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 15px rgba(255,0,0,0.3);
+        }
+
+        .cart-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(255,0,0,0.5);
         }
         
         /* Фильтры в стиле неон */
@@ -504,6 +522,11 @@
                 <div class="stat-item">🛒 В корзине: <span id="cartCount">0</span></div>
                 <div class="stat-item">⭐ Рейтинг: 4.9/5</div>
             </div>
+
+            <!-- Ссылка на корзину -->
+            <a href="cart.html" class="cart-link" id="cartLink">
+                🛒 Перейти в корзину (<span id="headerCartCount">0</span>)
+            </a>
         </div>
 
         <!-- Фильтры -->
@@ -546,12 +569,28 @@
         🛒 В корзине: <span id="cartCountDisplay">0</span> товаров
     </div>
 
-    <!-- JavaScript код остается таким же как в предыдущей версии -->
     <script>
-        // Тот же JavaScript код что и раньше
         let cartItems = [];
         let allProducts = [];
         let currentFilter = 'all';
+
+        // Загрузка корзины из localStorage
+        function loadCartFromStorage() {
+            const savedCart = localStorage.getItem('eliteTelegramCart');
+            if (savedCart) {
+                cartItems = JSON.parse(savedCart);
+                updateCartNotification();
+                updateHeaderCartCount();
+            }
+        }
+
+        // Обновление счетчика в хедере
+        function updateHeaderCartCount() {
+            const countElement = document.getElementById('headerCartCount');
+            if (countElement) {
+                countElement.textContent = cartItems.length;
+            }
+        }
 
         async function loadLZTProducts() {
             showLoading(true);
@@ -781,7 +820,11 @@
                     addedAt: new Date().toLocaleTimeString()
                 });
                 
+                // Сохраняем в localStorage
+                localStorage.setItem('eliteTelegramCart', JSON.stringify(cartItems));
+                
                 updateCartNotification();
+                updateHeaderCartCount();
                 showNotification(`💀 "${product.name}" добавлен в корзину!`, 'success');
                 
                 event.target.innerHTML = '💀 Добавлено!';
@@ -879,6 +922,7 @@
         }
 
         document.addEventListener('DOMContentLoaded', function() {
+            loadCartFromStorage();
             loadLZTProducts();
             startAutoRefresh();
             
